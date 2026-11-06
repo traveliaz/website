@@ -24,13 +24,19 @@
 <meta property="og:title" content="Traveliaz · The world is yours">
 <meta property="og:description" content="Hostels, hotels, flights, cars and local tours, compared in one place. Start with Egypt.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://traveliaz.vercel.app/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1643667996984-fcc69743449d?auto=format&fit=crop&w=1200&h=630&q=75">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1643667996984-fcc69743449d?auto=format&fit=crop&w=1200&h=630&q=75">
+<link rel="canonical" href="https://traveliaz.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TravelAgency","name":"Traveliaz","slogan":"The world is yours","description":"Hostel and hotel comparison for solo travelers, plus flights, car rentals and guided tours across Egypt.","areaServed":["Cairo","Alexandria","Hurghada","Sharm El Sheikh","Luxor","Aswan"],"address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"knowsAbout":["Hostels","Hotels","Solo travel","Egypt tours","Flights","Car rental","Group travel"]}
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Traveliaz","url":"https://traveliaz.vercel.app/","image":"https://images.unsplash.com/photo-1643667996984-fcc69743449d?auto=format&fit=crop&w=1200&h=630&q=75","logo":"https://traveliaz.vercel.app/assets/brand/apple-touch-icon-180.png","slogan":"The world is yours","description":"Hostel and hotel comparison for solo travelers, plus flights, car rentals and guided tours across Egypt.","areaServed":["Cairo","Alexandria","Hurghada","Sharm El Sheikh","Luxor","Aswan"],"address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"knowsAbout":["Hostels","Hotels","Solo travel","Egypt tours","Flights","Car rental","Group travel"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -112,12 +118,13 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgrou
 /* hero */
 .hero{padding-block:20px 0}
 .hero-photo{border-radius:28px;min-height:540px;display:flex;align-items:flex-end}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,22,0) 30%,rgba(20,10,22,.62) 100%)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,10,22,.72) 0%,rgba(20,10,22,.45) 45%,rgba(20,10,22,.05) 75%),linear-gradient(180deg,rgba(20,10,22,0) 45%,rgba(20,10,22,.55) 100%)}
+.hero-copy h1,.hero-copy p{text-shadow:0 2px 14px rgba(0,0,0,.35)}
 .hero-copy{position:relative;z-index:1;padding:40px 40px 112px;color:#fff;max-width:760px}
 .hero-copy .kicker{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px}
 .hero h1{font-size:clamp(2.5rem,6vw,4.6rem);font-weight:800;margin-top:14px;letter-spacing:-.03em}
 .hero-copy p{font-size:1.12rem;margin-top:12px;max-width:52ch;opacity:.95}
-@media (max-width:640px){.hero-photo{min-height:520px;border-radius:22px}.hero-copy{padding:28px 22px 110px}}
+@media (max-width:640px){.hero-photo{min-height:520px;border-radius:22px}.hero-photo::after{background:linear-gradient(180deg,rgba(20,10,22,.15) 0%,rgba(20,10,22,.55) 45%,rgba(20,10,22,.75) 100%)}.hero-copy{padding:28px 22px 110px}}
 
 .search{position:relative;z-index:2;margin:-64px auto 0;width:min(100% - 32px,1060px);background:var(--surface);border-radius:20px;box-shadow:var(--shadow);padding:8px;border:1px solid var(--line)}
 .tabs{display:flex;gap:4px;overflow-x:auto;padding:4px 4px 8px;border-bottom:1px solid var(--line);scrollbar-width:none}
@@ -131,7 +138,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgrou
 .field select:focus,.field input:focus{outline:none}
 .fields .btn{font-size:1rem;padding:14px 26px}
 .search-err{color:var(--pink);font-weight:600;font-size:.88rem;padding:4px 12px 8px}
-@media (max-width:900px){.fields{grid-template-columns:1fr 1fr}.fields .field:first-child,.fields .btn{grid-column:1/-1}}
+@media (max-width:900px){.fields{grid-template-columns:1fr 1fr}.fields .field:first-child,.fields .field:nth-child(4),.fields .btn{grid-column:1/-1}}
 
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;padding-block:26px 10px;color:var(--muted);font-size:.88rem}
 .trust b{color:var(--ink);font-weight:800;letter-spacing:-.01em}
@@ -139,6 +146,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgrou
 
 /* sections */
 section.block{padding-block:64px}
+section[id],#top{scroll-margin-top:84px}
 section.soft{background:var(--soft)}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px 24px;flex-wrap:wrap;margin-bottom:24px}
 .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800}
@@ -163,7 +171,7 @@ section.soft{background:var(--soft)}
 .world button:hover{border-color:var(--ink)}
 .world-link{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:600;color:var(--ink);font-size:.85rem;text-decoration:none}
 .world-link:hover{border-color:var(--ink)}
-.rates .link{font-weight:700;color:var(--pink);text-decoration:none}
+.rates .link{font-weight:700;color:var(--pink);text-decoration:none;padding:2px 0}
 .rates .link:hover{text-decoration:underline}
 .card .sub .link{color:var(--pink);font-weight:600;text-decoration:none}
 
@@ -176,7 +184,12 @@ section.soft{background:var(--soft)}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 @media (max-width:1000px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.grid3,.grid2{grid-template-columns:1fr}}
+@media (max-width:640px){.grid3,.grid2{grid-template-columns:1fr}
+  .grid3.scroller{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-16px;padding:2px 16px 12px;scrollbar-width:none}
+  .grid3.scroller::-webkit-scrollbar{display:none}
+  .grid3.scroller > .card{flex:0 0 84%;scroll-snap-align:start}
+  .swipe-hint{display:block}}
+.swipe-hint{display:none;font-size:.8rem;color:var(--muted);margin:-8px 0 10px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
 .card:hover{box-shadow:var(--shadow-sm)}
 .card .photo{aspect-ratio:16/10;max-width:100%}
@@ -308,7 +321,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       <li><a href="#business">For business</a></li>
     </ul>
     <div class="nav-right">
-      <div class="cur" role="group" aria-label="Currency">
+      <div class="cur" role="group" aria-label="Currency for tour prices" title="Currency for tour prices">
         <button type="button" id="cur-usd" aria-pressed="true">USD</button>
         <button type="button" id="cur-egp" aria-pressed="false">EGP</button>
       </div>
@@ -341,17 +354,17 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
             <option value="cairo">Cairo</option><option value="luxor">Luxor</option><option value="aswan">Aswan</option>
             <option value="hurghada">Hurghada</option><option value="sharm">Sharm El Sheikh</option><option value="alexandria">Alexandria</option>
           </select></div>
-        <div class="field"><label for="q-in" id="l-in">Check in</label><input id="q-in" type="date" value="2026-11-12"></div>
-        <div class="field"><label for="q-out" id="l-out">Check out</label><input id="q-out" type="date" value="2026-11-16"></div>
+        <div class="field"><label for="q-in" id="l-in">Check in</label><input id="q-in" type="date"></div>
+        <div class="field"><label for="q-out" id="l-out">Check out</label><input id="q-out" type="date"></div>
         <div class="field"><label for="q-guests">Travelers</label><select id="q-guests"><option>1 traveler</option><option>2 travelers</option><option>3 travelers</option><option>4+ travelers</option></select></div>
         <button class="btn btn-primary" type="submit" id="q-go">Search</button>
       </div>
       <p class="search-err" id="search-err" role="alert" hidden></p>
     </form>
     <div class="trust">
-      <span>Prices compared on <b>Booking.com</b> · <b>Expedia</b> · <b>Hostelworld</b> · <b>Agoda</b></span>
-      <span><svg class="icon" style="color:var(--ok);width:18px"><use href="#i-check"/></svg>No booking fees</span>
-      <span><svg class="icon" style="color:var(--ok);width:18px"><use href="#i-check"/></svg>Free cancellation on most tours</span>
+      <span>Compare on <b>Hostelworld</b> · <b>Booking.com</b> · <b>Expedia</b></span>
+      <span><svg class="icon" style="color:var(--ok);width:18px"><use href="#i-check"/></svg>You pay the partner's own price</span>
+      <span><svg class="icon" style="color:var(--ok);width:18px"><use href="#i-check"/></svg>Tours with licensed local guides</span>
     </div>
   </section>
 
@@ -372,7 +385,8 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <a class="link" id="see-all" href="https://www.hostelworld.com/hostels/africa/egypt/" target="_blank" rel="sponsored noopener">See all stays <svg class="icon" style="width:18px"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="chips" id="stay-filters" aria-label="Filter stays by city"></div>
-      <div class="grid3" id="stay-grid"></div>
+      <p class="swipe-hint">Swipe to see more →</p>
+      <div class="grid3 scroller" id="stay-grid"></div>
       <p class="note">Ratings, review counts and starting prices from Hostelworld, checked November 2026. Prices change daily; the partner site shows the live rate.</p>
     </div>
   </section>
@@ -395,7 +409,8 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       </div>
       <div class="chips" role="tablist" id="city-tabs" aria-label="Choose a city"></div>
       <p class="city-line" id="city-line"></p>
-      <div class="grid3" id="tour-grid"></div>
+      <p class="swipe-hint">Swipe to see more →</p>
+      <div class="grid3 scroller" id="tour-grid"></div>
     </div>
   </section>
 
@@ -407,7 +422,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
           <div class="cap"><h3>Hotel + flight packages</h3><p>Fly into Cairo, Luxor, Aswan, Hurghada or Sharm El Sheikh and save when you book both together on Expedia.</p><span class="btn">Search packages</span></div>
         </a>
         <a class="photo plan" id="plan-cars" href="https://www.discovercars.com/" target="_blank" rel="sponsored noopener" data-photo="cars" data-out="discovercars">
-          <div class="cap"><h3>Car rentals and transfers</h3><p>Compare self-drive rentals from local and international companies across Egypt on DiscoverCars.</p><span class="btn">Find a car</span></div>
+          <div class="cap"><h3>Car rentals</h3><p>Compare self-drive rentals from local and international companies in Cairo, Luxor, Hurghada and more on DiscoverCars.</p><span class="btn">Find a car</span></div>
         </a>
       </div>
     </div>
@@ -431,10 +446,10 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
           <p class="sub">We reply within one business day.</p>
           <div class="two">
             <label for="b-name">Your name<input id="b-name" required autocomplete="name"></label>
-            <label for="b-co">Company<input id="b-co" required autocomplete="organization"></label>
+            <label for="b-co">Company <span style="font-weight:500">(optional)</span><input id="b-co" autocomplete="organization"></label>
           </div>
           <div class="two">
-            <label for="b-email">Work email<input id="b-email" type="email" required autocomplete="email"></label>
+            <label for="b-email">Email<input id="b-email" type="email" required autocomplete="email"></label>
             <label for="b-size">Group size<select id="b-size"><option>5–15</option><option>16–50</option><option>51–150</option><option>150+</option></select></label>
           </div>
           <fieldset><legend>Services needed</legend>
@@ -443,8 +458,9 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
             <label class="check" for="s-car"><input id="s-car" type="checkbox"> Cars</label>
             <label class="check" for="s-tour"><input id="s-tour" type="checkbox"> Tours</label>
           </fieldset>
-          <label for="b-msg">Event and dates<textarea id="b-msg" rows="3" placeholder="e.g. Cairo ICT, 16–19 November, 24 people"></textarea></label>
-          <button class="btn btn-primary" type="submit">Send request</button>
+          <label for="b-msg">Trip, event and dates<textarea id="b-msg" rows="3" placeholder="e.g. Cairo ICT, 16–19 November, 24 people"></textarea></label>
+          <input type="text" id="b-hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <button class="btn btn-primary" type="submit" id="b-send">Send request</button>
           <p class="status" id="b2b-ok" role="status" hidden></p>
         </form>
       </div>
@@ -473,11 +489,11 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <p class="slogan">The world is yours.</p>
         <p style="margin-top:6px;max-width:36ch">Stays, flights, cars and tours, compared in one place. Based in Cairo.</p>
       </div>
-      <div><h4>Stays in Egypt</h4><ul><li><a href="#stays">Hostels in Cairo</a></li><li><a href="#stays">Hostels in Luxor</a></li><li><a href="#stays">Hostels in Aswan</a></li><li><a href="#stays">Hotels in Hurghada</a></li></ul></div>
-      <div><h4>Things to do</h4><ul><li><a href="#tours">Giza Pyramids tours</a></li><li><a href="#tours">Luxor balloon rides</a></li><li><a href="#tours">Red Sea snorkeling</a></li><li><a href="#tours">Abu Simbel trips</a></li></ul></div>
+      <div><h4>Stays in Egypt</h4><ul><li><a href="#stays" data-stay-city="cairo">Hostels in Cairo</a></li><li><a href="#stays" data-stay-city="luxor">Hostels in Luxor</a></li><li><a href="#stays" data-stay-city="aswan">Hostels in Aswan</a></li><li><a href="#stays" data-stay-city="hurghada">Hostels in Hurghada</a></li></ul></div>
+      <div><h4>Things to do</h4><ul><li><a href="#tours" data-tour-city="cairo">Giza Pyramids tours</a></li><li><a href="#tours" data-tour-city="luxor">Luxor balloon rides</a></li><li><a href="#tours" data-tour-city="hurghada">Red Sea snorkeling</a></li><li><a href="#tours" data-tour-city="aswan">Abu Simbel trips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#business">For business</a></li><li><a href="#business">Exhibitions</a></li><li><a href="#faq">Help</a></li></ul></div>
     </div>
-    <p class="legal">© 2026 Traveliaz. Booking.com, Expedia, Hostelworld and Agoda are trademarks of their owners. Tour prices in EGP use a reference rate of 48.5 per USD. Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
+    <p class="legal">© 2026 Traveliaz. Booking.com, Expedia, Hostelworld, GetYourGuide and DiscoverCars are trademarks of their owners. Tour prices in EGP use a reference rate of 48.5 per USD. Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -594,8 +610,26 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   const imgTag = (id, alt, w) => `<img src="${U(id, w || 900)}" alt="${alt}" loading="lazy">`;
   document.querySelectorAll("[data-photo]").forEach(el => el.insertAdjacentHTML("afterbegin", photoInner(el.dataset.photo)));
 
+  /* Booking requests are emailed through FormSubmit (free). After the first request, FormSubmit sends an activation email
+     to this address; confirm it once. You can then swap the address for the private alias FormSubmit gives you. */
+  const FORM_EMAIL = "traveliaz13290@gmail.com";
   const $ = s => document.querySelector(s);
   let cur = "USD", stayCity = "all", tourCity = "cairo", favs = new Set();
+  try { favs = new Set(JSON.parse(localStorage.getItem("tz-favs") || "[]")); } catch(e) {}
+  const saveFavs = () => { try { localStorage.setItem("tz-favs", JSON.stringify([...favs])); } catch(e) {} };
+  /* default dates: two weeks from today, 4 nights; never in the past */
+  const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  (function initDates(){
+    const today = new Date(), inEl = $("#q-in"), outEl = $("#q-out");
+    inEl.min = iso(today); inEl.value = iso(addDays(today, 14));
+    outEl.min = iso(addDays(today, 1)); outEl.value = iso(addDays(today, 18));
+    inEl.addEventListener("change", () => {
+      if (!inEl.value) return;
+      const next = iso(addDays(new Date(inEl.value + "T12:00"), 1)); outEl.min = next;
+      if (!outEl.value || outEl.value <= inEl.value) outEl.value = iso(addDays(new Date(inEl.value + "T12:00"), 4));
+    });
+  })();
   try { cur = localStorage.getItem("tz-cur") || "USD"; } catch(e) {}
   const money = usd => cur === "USD" ? `$${usd}` : `EGP ${Math.round(usd * RATE).toLocaleString("en-US")}`;
   const eur = v => `€${v.toFixed(2)}`;
@@ -611,7 +645,10 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     return "https://www.expedia.com/Hotel-Search?" + q.toString();
   };
   const hwCity = k => `${HW}hostels/africa/egypt/${CITIES[k].hw}/`;
-  const gygSearch = q => "https://www.getyourguide.com/s/?q=" + encodeURIComponent(q);
+  const GYG = { cairo:"cairo-l92", luxor:"luxor-l109", aswan:"aswan-l543", hurghada:"hurghada-l403", sharm:"sharm-el-sheikh-l408", alexandria:"alexandria-l490", giza:"giza-plateau-l8505" };
+  const gygPage = key => `https://www.getyourguide.com/${GYG[key] || "egypt-l169049"}/`;
+  const DC = { cairo:"cairo", luxor:"luxor", aswan:"aswan", hurghada:"hurghada-red-sea", sharm:"sharm-el-sheikh", alexandria:"alexandria" };
+  const carsUrl = k => "https://www.discovercars.com/egypt" + (DC[k] ? "/" + DC[k] : "");
 
   function renderMosaic(){
     const order = ["cairo","luxor","aswan","hurghada","sharm","alexandria"];
@@ -638,11 +675,11 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
           <div><h3>${h.name}</h3><p class="sub">${CITIES[h.city].name}, Egypt</p></div>
           <div class="rating"><b>${h.rating.toFixed(1)}</b><strong>${h.label}</strong><span class="num">· ${h.reviews.toLocaleString("en-US")} reviews on Hostelworld</span></div>
           <div class="rates">
-            <div class="best"><span>Hostelworld</span>${ext("hostelworld", h.url, "num link", "from " + eur(h.from))}</div>
-            <div><span>Booking.com</span>${ext("booking", bookingSearch(place), "link", "Check price")}</div>
-            <div><span>Expedia</span>${ext("expedia", expediaSearch(place), "link", "Check price")}</div>
+            <div class="best"><span>Hostelworld</span>${ext("hostelworld", h.url, "num link", eur(h.from))}</div>
+            <div><span>Booking.com</span>${ext("booking", bookingSearch(place), "link", "Compare")}</div>
+            <div><span>Expedia</span>${ext("expedia", expediaSearch(place), "link", "Compare")}</div>
           </div>
-          <div class="foot-row"><div class="price num">${eur(h.from)} <small>/ night from</small></div>${ext("hostelworld", h.url, "btn btn-primary", "View deal")}</div>
+          <div class="foot-row"><div class="price num"><small>from </small>${eur(h.from)} <small>/ night</small></div>${ext("hostelworld", h.url, "btn btn-primary", "View deal")}</div>
         </div></article>`;
     }).join("");
   }
@@ -650,13 +687,14 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     $("#city-tabs").innerHTML = chips(tourCity, false, "tab");
     const c = CITIES[tourCity];
     $("#city-line").textContent = c.line;
+    $("#tour-grid").scrollLeft = 0; $("#stay-grid").scrollLeft = 0;
     $("#tour-grid").innerHTML = c.tours.map(e => `<article class="card">
       <div class="photo">${imgTag(e[4], e[0])}<span class="pill-on-photo">Traveliaz tour</span></div>
       <div class="body">
         <h3>${e[0]}</h3>
         <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"/></svg>${e[1]}</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"/></svg>${e[2]}</span><span>Licensed guide</span></div>
         <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>${money(e[3])}</div><button class="btn btn-primary" type="button" data-request="${e[0]}">Request booking</button></div>
-        <p class="sub">More options: ${ext("getyourguide", gygSearch(e[5]), "link", "compare on GetYourGuide")}</p>
+        <p class="sub">Or browse ${ext("getyourguide", gygPage(e[0].startsWith("Giza") ? "giza" : tourCity), "link", `more ${c.name} tours on GetYourGuide`)}</p>
       </div></article>`).join("");
   }
   function renderWorld(){
@@ -681,7 +719,9 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const ct = t.closest("#city-tabs .chip"); if (ct) { tourCity = ct.dataset.c; renderTours(); return; }
     const tile = t.closest(".tile"); if (tile) { stayCity = tile.dataset.city; renderStays(); $("#stays").scrollIntoView({behavior:"smooth"}); return; }
     const tab = t.closest(".tab"); if (tab) { setMode(tab.dataset.mode); return; }
-    const fv = t.closest(".fav"); if (fv) { const n = fv.dataset.fav; favs.has(n) ? favs.delete(n) : favs.add(n); fv.setAttribute("aria-pressed", favs.has(n)); toast(favs.has(n) ? `Saved ${n}` : `Removed ${n}`); return; }
+    const fs = t.closest("[data-stay-city]"); if (fs) { stayCity = fs.dataset.stayCity; renderStays(); }
+    const ft = t.closest("[data-tour-city]"); if (ft) { tourCity = ft.dataset.tourCity; renderTours(); }
+    const fv = t.closest(".fav"); if (fv) { const n = fv.dataset.fav; favs.has(n) ? favs.delete(n) : favs.add(n); saveFavs(); fv.setAttribute("aria-pressed", favs.has(n)); toast(favs.has(n) ? `Saved ${n}` : `Removed ${n}`); return; }
     const rq = t.closest("[data-request]"); if (rq) {
       $("#b-msg").value = `Tour: ${rq.dataset.request}\nDate: \nNumber of travelers: `;
       ["s-hotel","s-flight","s-car"].forEach(id => $("#" + id).checked = false); $("#s-tour").checked = true;
@@ -691,7 +731,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     if (t.closest("#menu a")) { $("#menu").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); }
   });
   $("#plan-flights").href = out("expedia", "https://www.expedia.com/Vacation-Packages");
-  $("#plan-cars").href = out("discovercars", "https://www.discovercars.com/");
+  $("#plan-cars").href = out("discovercars", carsUrl(""));
   $("#search").addEventListener("submit", ev => {
     ev.preventDefault();
     const err = $("#search-err"), d = dates();
@@ -701,15 +741,28 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const place = city === "all" ? "Egypt" : `${CITIES[city].name}, Egypt`;
     if (mode === "stays") { if (city !== "all") { stayCity = city; renderStays(); } openOut(out("booking", bookingSearch(place, true))); }
     else if (mode === "tours") { if (city !== "all") { tourCity = city; renderTours(); } $("#tours").scrollIntoView({behavior:"smooth"}); }
-    else if (mode === "cars") openOut(out("discovercars", "https://www.discovercars.com/"));
+    else if (mode === "cars") openOut(out("discovercars", carsUrl(city)));
     else openOut(out("expedia", "https://www.expedia.com/Vacation-Packages"));
   });
   $("#b2b-form").addEventListener("submit", ev => {
     ev.preventDefault();
-    const name = $("#b-name").value.trim(), co = $("#b-co").value.trim(), em = $("#b-email").value.trim(), ok = $("#b2b-ok");
+    const name = $("#b-name").value.trim(), co = $("#b-co").value.trim(), em = $("#b-email").value.trim(), ok = $("#b2b-ok"), btn = $("#b-send");
     ok.hidden = false;
-    if (!name || !co || !/^\S+@\S+\.\S+$/.test(em)) { ok.textContent = "Add your name, company and a valid work email so we can send the quote."; return; }
-    ok.textContent = `Thanks ${name}. This form is a preview and doesn't send yet; once connected, ${co}'s request goes straight to the business desk.`;
+    if ($("#b-hp").value) return;
+    if (!name || !/^\S+@\S+\.\S+$/.test(em)) { ok.textContent = "Add your name and a valid email so we can reply."; (!name ? $("#b-name") : $("#b-email")).focus(); return; }
+    const services = ["s-hotel","s-flight","s-car","s-tour"].filter(id => $("#" + id).checked).map(id => $("label[for=" + id + "]").textContent.trim());
+    const payload = { name, email: em, company: co || "-", group_size: $("#b-size").value, services: services.join(", ") || "-", message: $("#b-msg").value.trim() || "-",
+      _subject: `Traveliaz request from ${name}`, _replyto: em, _template: "table", _captcha: "false" };
+    btn.disabled = true; btn.textContent = "Sending…"; ok.textContent = "Sending your request…";
+    fetch("https://formsubmit.co/ajax/" + FORM_EMAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) })
+      .then(r => r.json().catch(() => ({})).then(j => ({ ok: r.ok && String(j.success) !== "false", j })))
+      .then(({ ok: sent }) => {
+        if (!sent) throw new Error("not sent");
+        ok.textContent = `Thanks ${name}. Your request is in. We reply to ${em} within one business day.`;
+        ["b-name","b-co","b-email","b-msg"].forEach(id => $("#" + id).value = "");
+      })
+      .catch(() => { ok.textContent = `We couldn't send that just now. Check your connection and try again, or email us at ${FORM_EMAIL}.`; })
+      .finally(() => { btn.disabled = false; btn.textContent = "Send request"; });
   });
   renderWorld(); setCur(cur);
 })();
