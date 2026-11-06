@@ -245,6 +245,17 @@ section.soft{background:var(--soft)}
 .film-frame{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:16/9;max-width:100%}
 .film-frame video{display:block;width:100%;height:100%;object-fit:cover}
 
+/* plan extras */
+.extras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
+@media (max-width:640px){.extras{grid-template-columns:1fr}}
+.extra{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1.5px solid var(--line);border-radius:var(--r-sm);text-decoration:none;color:var(--ink);background:var(--surface);min-width:0}
+.extra:hover{border-color:var(--pink)}
+.extra .ic{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--pink-soft);color:var(--pink);flex:none}
+.extra strong{display:block;font-family:var(--head);font-size:1.05rem}
+.extra > span:nth-child(2){min-width:0}
+.extra > span:nth-child(2) > span{color:var(--muted);font-size:.9rem}
+.extra .go{margin-left:auto;color:var(--pink)}
+
 /* plan cards */
 .plan{position:relative;border-radius:var(--r);min-height:300px;display:flex;align-items:flex-end;color:#fff;text-decoration:none}
 .plan::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,22,.05) 20%,rgba(20,10,22,.72) 100%)}
@@ -452,13 +463,25 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
 
   <section class="block" id="plan" aria-labelledby="plan-title">
     <div class="wrap">
-      <div class="sec-head"><div><h2 id="plan-title">Plan the whole trip</h2><p>Bundle your stay with flights or a car and keep everything in one place.</p></div></div>
+      <div class="sec-head"><div><h2 id="plan-title">Plan the whole trip</h2><p>Add flights, a car, an airport transfer and mobile data to your stay.</p></div></div>
       <div class="grid2">
         <a class="photo plan" id="plan-flights" href="/flights/" data-photo="flights">
           <div class="cap"><h3>Cheap flights to Egypt</h3><p>Compare fares from airlines and booking sites to Cairo, Luxor, Aswan, Hurghada and Sharm El Sheikh, with hotel offers alongside.</p><span class="btn">Search flights</span></div>
         </a>
-        <a class="photo plan" id="plan-cars" href="https://www.discovercars.com/" target="_blank" rel="sponsored noopener" data-photo="cars" data-out="discovercars">
-          <div class="cap"><h3>Car rentals</h3><p>Compare self-drive rentals from local and international companies in Cairo, Luxor, Hurghada and more on DiscoverCars.</p><span class="btn">Find a car</span></div>
+        <a class="photo plan" id="plan-cars" href="https://www.localrent.com/en/egypt/" target="_blank" rel="sponsored noopener" data-photo="cars">
+          <div class="cap"><h3>Car rentals</h3><p>Rent from local companies in Cairo, Hurghada and Sharm El Sheikh, with airport pickup or delivery to your hotel, on Localrent.</p><span class="btn">Find a car</span></div>
+        </a>
+      </div>
+      <div class="extras">
+        <a class="extra" id="plan-transfer" href="https://kiwitaxi.com/egypt" target="_blank" rel="sponsored noopener">
+          <span class="ic"><svg class="icon"><use href="#i-car"/></svg></span>
+          <span><strong>Airport transfers</strong><span>Prebook a private driver from Cairo, Hurghada and other Egyptian airports at a fixed price on Kiwitaxi.</span></span>
+          <svg class="icon go"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="extra" id="plan-esim" href="https://www.airalo.com/egypt-esim" target="_blank" rel="sponsored noopener">
+          <span class="ic"><svg class="icon"><use href="#i-pin"/></svg></span>
+          <span><strong>Egypt eSIM</strong><span>Mobile data from the moment you land, installed on your phone before you fly, from Airalo.</span></span>
+          <svg class="icon go"><use href="#i-arrow"/></svg>
         </a>
       </div>
     </div>
@@ -529,7 +552,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       <div><h4>Things to do</h4><ul><li><a href="#tours" data-tour-city="cairo">Giza Pyramids tours</a></li><li><a href="#tours" data-tour-city="luxor">Luxor balloon rides</a></li><li><a href="#tours" data-tour-city="hurghada">Red Sea snorkeling</a></li><li><a href="#tours" data-tour-city="aswan">Abu Simbel trips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="/flights/">Cheap flights to Egypt</a></li><li><a href="#business">For business</a></li><li><a href="#business">Exhibitions</a></li><li><a href="#faq">Help</a></li></ul></div>
     </div>
-    <p class="legal">© 2026 Traveliaz. Booking.com, Expedia, Hostelworld, GetYourGuide and DiscoverCars are trademarks of their owners. Tour prices in EGP use a reference rate of 48.5 per USD. Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
+    <p class="legal">© 2026 Traveliaz. Booking.com, Expedia, Hostelworld, Klook, Localrent, DiscoverCars, Kiwitaxi and Airalo are trademarks of their owners. Tour prices in EGP use a reference rate of 48.5 per USD. Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -541,12 +564,19 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
      Travelpayouts: one account covers Hostelworld, Booking.com, GetYourGuide, DiscoverCars and more. Copy "marker" and "trs"
      from your dashboard, and each brand's "p" and "campaign_id" from its link generator. When set, Travelpayouts takes priority. */
   const AFF = {
-    travelpayouts: { marker: "", trs: "", programs: {
-      hostelworld: { p: "", campaign_id: "" },
-      booking:     { p: "", campaign_id: "" },
-      getyourguide:{ p: "", campaign_id: "" },
-      discovercars:{ p: "", campaign_id: "" },
-      expedia:     { p: "", campaign_id: "" } } },
+    travelpayouts: { marker: "801704", trs: "596753", programs: {
+      /* Active now */
+      klook:       { p: "4110", campaign_id: "137" },
+      tiqets:      { p: "2074", campaign_id: "89" },
+      localrent:   { p: "2043", campaign_id: "87" },
+      kiwitaxi:    { p: "647",  campaign_id: "1" },
+      airalo:      { p: "8310", campaign_id: "541" },
+      /* Pending Travelpayouts approval: fill "p" from the link generator once approved (campaign_id is already known) */
+      hostelworld: { p: "", campaign_id: "93" },
+      booking:     { p: "", campaign_id: "84" },
+      getyourguide:{ p: "", campaign_id: "108" },
+      discovercars:{ p: "", campaign_id: "117" },
+      expedia:     { p: "", campaign_id: "594" } } },
     hostelworld:  { camref: "" },      /* Hostelworld direct, via Partnerize */
     booking:      { aid: "" },         /* Booking.com Affiliate Partner Programme */
     getyourguide: { partner_id: "" },  /* GetYourGuide Partner Program */
@@ -683,8 +713,12 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   const hwCity = k => `${HW}hostels/africa/egypt/${CITIES[k].hw}/`;
   const GYG = { cairo:"cairo-l92", luxor:"luxor-l109", aswan:"aswan-l543", hurghada:"hurghada-l403", sharm:"sharm-el-sheikh-l408", alexandria:"alexandria-l490", giza:"giza-plateau-l8505" };
   const gygPage = key => `https://www.getyourguide.com/${GYG[key] || "egypt-l169049"}/`;
+  const KLOOK = { cairo:"city/284-cairo-things-to-do", luxor:"city/365435-luxor-things-to-do", aswan:"city/365308-aswan-things-to-do", hurghada:"city/365309-hurghada-things-to-do", sharm:"city/532-sharm-el-sheikh-things-to-do", alexandria:"destination/p50196185-qaitbay-citadel/1-things-to-do" };
+  const klookPage = key => `https://www.klook.com/en-US/${KLOOK[key] || KLOOK.cairo}`;
   const DC = { cairo:"cairo", luxor:"luxor", aswan:"aswan", hurghada:"hurghada-red-sea", sharm:"sharm-el-sheikh", alexandria:"alexandria" };
   const carsUrl = k => "https://www.discovercars.com/egypt" + (DC[k] ? "/" + DC[k] : "");
+  const LOCALRENT = ["all", "cairo", "hurghada", "sharm"];   /* Localrent covers these in Egypt; DiscoverCars for the rest */
+  const carLink = k => LOCALRENT.includes(k || "all") ? out("localrent", "https://www.localrent.com/en/egypt/") : out("discovercars", carsUrl(k));
 
   function renderMosaic(){
     const order = ["cairo","luxor","aswan","hurghada","sharm","alexandria"];
@@ -730,7 +764,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <h3>${e[0]}</h3>
         <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"/></svg>${e[1]}</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"/></svg>${e[2]}</span><span>Licensed guide</span></div>
         <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>${money(e[3])}</div><button class="btn btn-primary" type="button" data-request="${e[0]}">Request booking</button></div>
-        <p class="sub">Or browse ${ext("getyourguide", gygPage(e[0].startsWith("Giza") ? "giza" : tourCity), "link", `more ${c.name} tours on GetYourGuide`)}</p>
+        <p class="sub">Or browse ${ext("klook", klookPage(tourCity), "link", `more ${c.name} tours on Klook`)}</p>
       </div></article>`).join("");
   }
   function renderWorld(){
@@ -768,7 +802,9 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     if (t.closest("#menu a")) { $("#menu").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); }
   });
   fetch("assets/video/traveliaz-the-world-is-yours.mp4", { method: "HEAD" }).then(r => { if (r.ok && /video/.test(r.headers.get("content-type") || "")) $("#film").hidden = false; }).catch(() => {});
-  $("#plan-cars").href = out("discovercars", carsUrl(""));
+  $("#plan-cars").href = carLink("all");
+  $("#plan-transfer").href = out("kiwitaxi", "https://kiwitaxi.com/egypt");
+  $("#plan-esim").href = out("airalo", "https://www.airalo.com/egypt-esim");
   // Destination: Egyptian cities map to our own data; anything else is a worldwide search.
   const DESTS = [["Cairo, Egypt","CAI","cairo"],["Luxor, Egypt","LXR","luxor"],["Aswan, Egypt","ASW","aswan"],["Hurghada, Egypt","HRG","hurghada"],["Sharm El Sheikh, Egypt","SSH","sharm"],["Alexandria, Egypt","HBE","alexandria"],
     ["Dubai, United Arab Emirates","DXB"],["Istanbul, Türkiye","IST"],["London, United Kingdom","LON"],["Paris, France","PAR"],["Rome, Italy","ROM"],["Barcelona, Spain","BCN"],["Amsterdam, Netherlands","AMS"],["Lisbon, Portugal","LIS"],["Athens, Greece","ATH"],["Prague, Czechia","PRG"],["Berlin, Germany","BER"],["Marrakech, Morocco","RAK"],["Bangkok, Thailand","BKK"],["Bali, Indonesia","DPS"],["Tokyo, Japan","TYO"],["Singapore","SIN"],["New York, United States","NYC"],["Mexico City, Mexico","MEX"],["Cape Town, South Africa","CPT"],["Zanzibar, Tanzania","ZNZ"]];
@@ -806,7 +842,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     else if (mode === "tours") {
       if (!city) { err.textContent = "Our guided tours run in Egypt. Pick Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh or Alexandria."; err.hidden = false; return; }
       if (city !== "all") { tourCity = city; renderTours(); } $("#tours").scrollIntoView({behavior:"smooth"}); }
-    else if (mode === "cars") openOut(out("discovercars", city ? carsUrl(city) : "https://www.discovercars.com/"));
+    else if (mode === "cars") openOut(city ? carLink(city) : out("discovercars", "https://www.discovercars.com/"));
     else location.href = flightsUrl(dst, d);
   });
   $("#b2b-form").addEventListener("submit", ev => {
