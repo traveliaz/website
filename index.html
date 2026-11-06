@@ -185,11 +185,12 @@ section.soft{background:var(--soft)}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 @media (max-width:1000px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.grid3,.grid2{grid-template-columns:1fr}
-  .grid3.scroller{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-16px;padding:2px 16px 12px;scrollbar-width:none}
+  .grid3.scroller{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;gap:14px;margin-inline:-16px;padding:2px 16px 12px;scrollbar-width:none}
   .grid3.scroller::-webkit-scrollbar{display:none}
   .grid3.scroller > .card{flex:0 0 84%;scroll-snap-align:start}
   .swipe-hint{display:block}}
-.swipe-hint{display:none;font-size:.8rem;color:var(--muted);margin:-8px 0 10px}
+.swipe-hint{font-size:.8rem;color:var(--muted);margin:-8px 0 10px}
+@media (min-width:641px){.swipe-hint{display:none}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
 .card:hover{box-shadow:var(--shadow-sm)}
 .card .photo{aspect-ratio:16/10;max-width:100%}
