@@ -6,6 +6,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" type="image/svg+xml" href="assets/brand/traveliaz-icon.svg">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://images.unsplash.com">
 <meta name="theme-color" content="#E8075B">
 <title>Traveliaz Egypt</title>
 <meta name="description" content="The world is yours. Compare the best-rated hostels and hotels in Egypt across Booking.com, Expedia and Hostelworld, add flights and car rentals, and book tours with licensed guides in Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh and Alexandria.">
@@ -14,8 +15,6 @@
 <meta property="og:description" content="Hostels, hotels, flights, cars and local tours, compared in one place. Start with Egypt.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="author" content="EGO Web Services LLC">
-<meta name="designer" content="EGO Web Services LLC, egowebservices.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -24,12 +23,9 @@
 {"@context":"https://schema.org","@type":"TravelAgency","name":"Traveliaz","slogan":"The world is yours","description":"Hostel and hotel comparison for solo travelers, plus flights, car rentals and guided tours across Egypt.","areaServed":["Cairo","Alexandria","Hurghada","Sharm El Sheikh","Luxor","Aswan"],"address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"knowsAbout":["Hostels","Hotels","Solo travel","Egypt tours","Flights","Car rental","Group travel"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Traveliaz","creator":{"@type":"Organization","name":"EGO Web Services LLC","url":"https://egowebservices.com"}}
-</script>
-<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is Egypt safe for solo travelers?","acceptedAnswer":{"@type":"Answer","text":"Most solo travelers visit Egypt without problems. Stay in well-reviewed central areas, use registered taxis or ride-hailing apps, and book guided experiences for remote sites. Every hostel we list shows its solo-safety score from verified guest reviews."}},
-{"@type":"Question","name":"How does Traveliaz pick recommended hostels?","acceptedAnswer":{"@type":"Answer","text":"We pull listings and guest ratings from Booking.com, Expedia, Hostelworld and other partners, then score each property on safety, social atmosphere, location and value for solo travelers."}},
+{"@type":"Question","name":"Is Egypt safe for solo travelers?","acceptedAnswer":{"@type":"Answer","text":"Most solo travelers visit Egypt without problems. Stay in well-reviewed central areas, use registered taxis or ride-hailing apps, and book guided experiences for remote sites. Every hostel we list shows its guest rating and number of reviews, so you can see how other travelers rated it."}},
+{"@type":"Question","name":"How does Traveliaz pick recommended hostels?","acceptedAnswer":{"@type":"Answer","text":"We pull listings and guest ratings from Booking.com, Expedia, Hostelworld and other partners, and pick the best-rated properties in each city, weighting places with many reviews from solo travelers."}},
 {"@type":"Question","name":"Do I pay more by booking through Traveliaz?","acceptedAnswer":{"@type":"Answer","text":"No. Stays are booked directly on the partner platform at its listed price. We show the lowest available rate side by side."}},
 {"@type":"Question","name":"Which Egyptian cities do your tours cover?","acceptedAnswer":{"@type":"Answer","text":"Cairo, Alexandria, Hurghada, Sharm El Sheikh, Luxor and Aswan, with licensed guides and small-group or private options."}},
 {"@type":"Question","name":"Can travel agencies and exhibitors work with Traveliaz?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our business desk bundles recommended hotels, flights and car rentals for agencies, corporate groups and trade-exhibition delegations."}}
@@ -155,6 +151,11 @@ section.soft{background:var(--soft)}
 .world{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:20px;color:var(--muted);font-size:.9rem}
 .world button{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:600;cursor:pointer;color:var(--ink);font-size:.85rem}
 .world button:hover{border-color:var(--ink)}
+.world-link{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:600;color:var(--ink);font-size:.85rem;text-decoration:none}
+.world-link:hover{border-color:var(--ink)}
+.rates .link{font-weight:700;color:var(--pink);text-decoration:none}
+.rates .link:hover{text-decoration:underline}
+.card .sub .link{color:var(--pink);font-weight:600;text-decoration:none}
 
 /* chips */
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:20px;scrollbar-width:thin}
@@ -186,7 +187,8 @@ section.soft{background:var(--soft)}
 .rates{display:grid;gap:4px;font-size:.86rem;padding-top:12px;border-top:1px solid var(--line);margin-top:auto}
 .rates div{display:flex;justify-content:space-between;gap:8px;color:var(--muted)}
 .rates .best{color:var(--ink);font-weight:700}
-.rates .best span:first-child::after{content:"Lowest";font-size:.66rem;font-weight:800;color:var(--ok);background:var(--ok-soft);margin-left:8px;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.rates .best span:first-child::after{content:none}
+.rates .x{content:"Lowest";font-size:.66rem;font-weight:800;color:var(--ok);background:var(--ok-soft);margin-left:8px;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
 .foot-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .price{font:800 1.4rem var(--head)}
 .price small{font:500 .8rem var(--body);color:var(--muted)}
@@ -356,12 +358,12 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   <section class="block soft" id="stays" aria-labelledby="stays-title">
     <div class="wrap">
       <div class="sec-head">
-        <div><h2 id="stays-title">Top-rated hostels for solo travelers</h2><p>Each stay gets a Solo Score from verified reviews on safety, social vibe, location and value. You book on the partner site at its own price.</p></div>
-        <a class="link" href="#stays">See all stays <svg class="icon" style="width:18px"><use href="#i-arrow"/></svg></a>
+        <div><h2 id="stays-title">Top-rated hostels for solo travelers</h2><p>The highest-rated hostels in each city, with their guest ratings and review counts from Hostelworld. You book on the partner site at its own price.</p></div>
+        <a class="link" id="see-all" href="https://www.hostelworld.com/hostels/africa/egypt/" target="_blank" rel="sponsored noopener">See all stays <svg class="icon" style="width:18px"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="chips" id="stay-filters" aria-label="Filter stays by city"></div>
       <div class="grid3" id="stay-grid"></div>
-      <p class="note">Sample listings. Live rates appear once the Booking.com, Expedia and Hostelworld affiliate feeds are connected.</p>
+      <p class="note">Ratings, review counts and starting prices from Hostelworld, checked November 2026. Prices change daily; the partner site shows the live rate.</p>
     </div>
   </section>
 
@@ -369,8 +371,8 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     <div class="wrap">
       <div class="sec-head"><h2 id="why-title">Why travelers book with Traveliaz</h2></div>
       <div class="values">
-        <div class="value"><div class="ic"><svg class="icon" style="width:24px;height:24px"><use href="#i-shield"/></svg></div><h3>Rated by solo travelers</h3><p>Women-only dorms, 24-hour reception and safe neighborhoods count toward every Solo Score.</p></div>
-        <div class="value"><div class="ic"><svg class="icon" style="width:24px;height:24px"><use href="#i-tag"/></svg></div><h3>The lowest price, side by side</h3><p>The same bed often costs less on one site. We show every rate so you never overpay.</p></div>
+        <div class="value"><div class="ic"><svg class="icon" style="width:24px;height:24px"><use href="#i-shield"/></svg></div><h3>Real ratings from real guests</h3><p>Every stay shows its guest rating and how many people reviewed it, so you know what you are booking.</p></div>
+        <div class="value"><div class="ic"><svg class="icon" style="width:24px;height:24px"><use href="#i-tag"/></svg></div><h3>Compare before you book</h3><p>Check the same stay on Hostelworld, Booking.com and Expedia in one click. You always pay the partner's own price.</p></div>
         <div class="value"><div class="ic"><svg class="icon" style="width:24px;height:24px"><use href="#i-pin"/></svg></div><h3>Licensed local guides</h3><p>Egyptologists, dive instructors and local hosts, vetted by our team in Cairo.</p></div>
       </div>
     </div>
@@ -379,7 +381,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   <section class="block soft" id="tours" aria-labelledby="tours-title">
     <div class="wrap">
       <div class="sec-head">
-        <div><h2 id="tours-title">Things to do in Egypt</h2><p>Small-group and private tours. Pay online, get instant confirmation and meet your guide at your hotel.</p></div>
+        <div><h2 id="tours-title">Things to do in Egypt</h2><p>Small-group and private tours run by Traveliaz with licensed local guides. Send a booking request and we confirm by email.</p></div>
       </div>
       <div class="chips" role="tablist" id="city-tabs" aria-label="Choose a city"></div>
       <p class="city-line" id="city-line"></p>
@@ -391,11 +393,11 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     <div class="wrap">
       <div class="sec-head"><div><h2 id="plan-title">Plan the whole trip</h2><p>Bundle your stay with flights or a car and keep everything in one place.</p></div></div>
       <div class="grid2">
-        <a class="photo plan" href="#top" data-photo="flights" data-mode="package">
-          <div class="cap"><h3>Hotel + flight packages</h3><p>Fly into Cairo, Luxor, Aswan, Hurghada or Sharm El Sheikh and save when you book both together.</p><span class="btn">Search packages</span></div>
+        <a class="photo plan" id="plan-flights" href="https://www.expedia.com/Vacation-Packages" target="_blank" rel="sponsored noopener" data-photo="flights" data-out="expedia">
+          <div class="cap"><h3>Hotel + flight packages</h3><p>Fly into Cairo, Luxor, Aswan, Hurghada or Sharm El Sheikh and save when you book both together on Expedia.</p><span class="btn">Search packages</span></div>
         </a>
-        <a class="photo plan" href="#top" data-photo="cars" data-mode="cars">
-          <div class="cap"><h3>Car rentals and transfers</h3><p>Airport pickups, self-drive cars and private drivers, compared across rental companies.</p><span class="btn">Find a car</span></div>
+        <a class="photo plan" id="plan-cars" href="https://www.discovercars.com/" target="_blank" rel="sponsored noopener" data-photo="cars" data-out="discovercars">
+          <div class="cap"><h3>Car rentals and transfers</h3><p>Compare self-drive rentals from local and international companies across Egypt on DiscoverCars.</p><span class="btn">Find a car</span></div>
         </a>
       </div>
     </div>
@@ -415,7 +417,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
           </ul>
         </div>
         <form class="b2b" id="b2b-form" novalidate>
-          <h3>Request a group quote</h3>
+          <h3>Request a booking or quote</h3>
           <p class="sub">We reply within one business day.</p>
           <div class="two">
             <label for="b-name">Your name<input id="b-name" required autocomplete="name"></label>
@@ -443,8 +445,8 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     <div class="wrap faq">
       <div><h2 id="faq-title" style="font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800">Questions about solo travel in Egypt</h2></div>
       <div>
-        <details open><summary>Is Egypt safe for solo travelers?</summary><p>Most solo travelers visit Egypt without problems. Stay in well-reviewed central areas, use registered taxis or ride-hailing apps, and book guided experiences for remote sites. Every hostel we list shows its solo-safety score from verified guest reviews.</p></details>
-        <details><summary>How does Traveliaz pick recommended hostels?</summary><p>We pull listings and guest ratings from Booking.com, Expedia, Hostelworld and other partners, then score each property on safety, social atmosphere, location and value for solo travelers.</p></details>
+        <details open><summary>Is Egypt safe for solo travelers?</summary><p>Most solo travelers visit Egypt without problems. Stay in well-reviewed central areas, use registered taxis or ride-hailing apps, and book guided experiences for remote sites. Every hostel we list shows its guest rating and number of reviews, so you can see how other travelers rated it.</p></details>
+        <details><summary>How does Traveliaz pick recommended hostels?</summary><p>We pull listings and guest ratings from Booking.com, Expedia, Hostelworld and other partners, and pick the best-rated properties in each city, weighting places with many reviews from solo travelers.</p></details>
         <details><summary>Do I pay more by booking through Traveliaz?</summary><p>No. Stays are booked directly on the partner platform at its listed price. We show the lowest available rate side by side.</p></details>
         <details><summary>Which Egyptian cities do your tours cover?</summary><p>Cairo, Alexandria, Hurghada, Sharm El Sheikh, Luxor and Aswan, with licensed guides and small-group or private options.</p></details>
         <details><summary>Can travel agencies and exhibitors work with Traveliaz?</summary><p>Yes. Our business desk bundles recommended hotels, flights and car rentals for agencies, corporate groups and trade-exhibition delegations.</p></details>
@@ -465,45 +467,89 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       <div><h4>Things to do</h4><ul><li><a href="#tours">Giza Pyramids tours</a></li><li><a href="#tours">Luxor balloon rides</a></li><li><a href="#tours">Red Sea snorkeling</a></li><li><a href="#tours">Abu Simbel trips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="#business">For business</a></li><li><a href="#business">Exhibitions</a></li><li><a href="#faq">Help</a></li></ul></div>
     </div>
-    <div class="legal" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px"><p>© 2026 Traveliaz. Booking.com, Expedia, Hostelworld and Agoda are trademarks of their owners. Prices are examples; EGP shown at a sample rate of 48.5 per USD.</p><p>Website design and branding by <a href="https://egowebservices.com" target="_blank" rel="noopener" style="color:var(--foot-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px">EGO Web Services LLC</a></p></div>
+    <p class="legal">© 2026 Traveliaz. Booking.com, Expedia, Hostelworld and Agoda are trademarks of their owners. Tour prices in EGP use a reference rate of 48.5 per USD. Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script>
 (function(){
-  /* ---- PHOTOS ----
-     Put your image URLs here (e.g. "/img/hero-giza.jpg"). Leave a value empty to show the illustrated stand-in.
-     Suggested shots are in PHOTO_BRIEF. Use landscape photos, at least 2400px wide for "hero", 1200px for the rest. */
-  const PHOTOS = {hero:"", cairo:"", luxor:"", aswan:"", hurghada:"", sharm:"", alexandria:"", flights:"", cars:"", b2b:""};
+  /* ==== AFFILIATE IDS ====
+     Paste your IDs here once each program approves you. Empty values = plain (untracked) links, so the site works either way.
+     Travelpayouts: one account covers Hostelworld, Booking.com, GetYourGuide, DiscoverCars and more. Copy "marker" and "trs"
+     from your dashboard, and each brand's "p" and "campaign_id" from its link generator. When set, Travelpayouts takes priority. */
+  const AFF = {
+    travelpayouts: { marker: "", trs: "", programs: {
+      hostelworld: { p: "", campaign_id: "" },
+      booking:     { p: "", campaign_id: "" },
+      getyourguide:{ p: "", campaign_id: "" },
+      discovercars:{ p: "", campaign_id: "" },
+      expedia:     { p: "", campaign_id: "" } } },
+    hostelworld:  { camref: "" },      /* Hostelworld direct, via Partnerize */
+    booking:      { aid: "" },         /* Booking.com Affiliate Partner Programme */
+    getyourguide: { partner_id: "" },  /* GetYourGuide Partner Program */
+    discovercars: { a_aid: "" },       /* DiscoverCars affiliate username */
+    expedia:      { link: "" }         /* Expedia Group Creator: paste one tracked link to expedia.com here */
+  };
+  function out(partner, url){
+    const tp = AFF.travelpayouts, prog = tp.programs[partner];
+    if (tp.marker && prog && prog.p) {
+      const q = new URLSearchParams({marker: tp.marker, p: prog.p, u: url});
+      if (tp.trs) q.set("trs", tp.trs); if (prog.campaign_id) q.set("campaign_id", prog.campaign_id);
+      return "https://tp.media/r?" + q.toString();
+    }
+    const u = new URL(url);
+    if (partner === "hostelworld" && AFF.hostelworld.camref) return `https://prf.hn/click/camref:${AFF.hostelworld.camref}/destination:${encodeURIComponent(url)}`;
+    if (partner === "booking" && AFF.booking.aid) u.searchParams.set("aid", AFF.booking.aid);
+    if (partner === "getyourguide" && AFF.getyourguide.partner_id) u.searchParams.set("partner_id", AFF.getyourguide.partner_id);
+    if (partner === "discovercars" && AFF.discovercars.a_aid) u.searchParams.set("a_aid", AFF.discovercars.a_aid);
+    if (partner === "expedia" && AFF.expedia.link) return AFF.expedia.link;
+    return u.toString();
+  }
+  const ext = (partner, url, cls, label) => `<a class="${cls}" href="${out(partner, url)}" target="_blank" rel="sponsored noopener">${label}</a>`;
+
+  /* ==== PHOTOS (Unsplash, free for commercial use) ==== */
+  const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
+  const PHOTOS = {
+    hero: U("1643667996984-fcc69743449d", 2400), cairo: U("1626692880062-35c360fb6afc", 1400), luxor: U("1685616075808-04bb9db4ea1c", 1400),
+    aswan: U("1684100096410-fd39cdff91a3", 1400), hurghada: U("1692285736030-03fb3ba9cd18", 1400), sharm: U("1669544553496-252ed4e9573d", 1400),
+    alexandria: U("1633624646814-3a61ed3e2847", 1400), flights: U("1488085061387-422e29b40080", 1600), cars: U("1505578399858-ce09b2f9485f", 1600),
+    b2b: U("1775314054195-85f31de0c944", 1400)};
   const PHOTO_BRIEF = {
-    hero:"Giza Pyramids at sunrise", cairo:"Cairo skyline and the Nile at dusk", luxor:"Hot-air balloons over Luxor",
-    aswan:"Feluccas on the Nile, Aswan", hurghada:"Red Sea reef, Hurghada", sharm:"Ras Mohammed coast, Sharm El Sheikh",
-    alexandria:"Qaitbay Citadel, Alexandria", flights:"Plane window over clouds", cars:"Desert road trip", b2b:"Exhibition hall in Cairo"};
+    hero:"The Pyramids of Giza", cairo:"Cairo Tower over the Nile", luxor:"Hot-air balloons over Luxor",
+    aswan:"A felucca on the Nile at Aswan", hurghada:"Red Sea coral reef", sharm:"Naama Bay, Sharm El Sheikh",
+    alexandria:"Qaitbay Citadel, Alexandria", flights:"View from a plane window", cars:"Desert road in Egypt", b2b:"Exhibition hall"};
 
   const RATE = 48.5;
   const CITIES = {
-    cairo:{name:"Cairo",from:9,line:"Pyramids at sunrise, the Grand Egyptian Museum and late-night koshary downtown. Stay near Tahrir for easy metro access.",
-      tours:[["Giza Pyramids sunrise with an Egyptologist","5h","Small group",45,4.9,312],["Old Cairo & Khan el-Khalili food walk","4h","Max 8",30,4.8,198],["Grand Egyptian Museum guided visit","3h","Small group",40,4.9,254]]},
-    luxor:{name:"Luxor",from:9,line:"The world's largest open-air museum. Temples on the East Bank, royal tombs on the West.",
-      tours:[["Hot-air balloon over the West Bank","3h","Basket of 16",90,4.9,421],["Valley of the Kings & Hatshepsut","6h","Small group",55,4.8,276],["Karnak sound & light show","2h","Open seating",25,4.4,133]]},
-    aswan:{name:"Aswan",from:13,line:"The calmest stretch of the Nile, Nubian villages and the gateway to Abu Simbel.",
-      tours:[["Felucca sail to Elephantine Island","2h","Private boat",15,4.9,187],["Nubian village visit","4h","Small group",25,4.7,142],["Abu Simbel day trip","12h","Small group",95,4.8,309]]},
-    hurghada:{name:"Hurghada",from:14,line:"Red Sea reefs straight off the coast and desert just behind town. The best-value place in Egypt to learn to dive.",
-      tours:[["Giftun Island snorkel day","7h","Boat group",35,4.8,264],["Desert quad ride & Bedouin dinner","5h","Small group",30,4.6,171],["Discover Scuba first dive","4h","Max 4",60,4.9,118]]},
-    sharm:{name:"Sharm El Sheikh",from:16,line:"Ras Mohammed's coral walls and the night climb up Mount Sinai.",
-      tours:[["Ras Mohammed national park snorkel","8h","Boat group",45,4.8,233],["Mount Sinai sunrise hike","12h","Small group",50,4.9,201],["Old Market evening walk","3h","Max 10",20,4.5,88]]},
-    alexandria:{name:"Alexandria",from:10,line:"Mediterranean breeze, Greco-Roman ruins and fresh fish on the Corniche. Two and a half hours from Cairo by train.",
-      tours:[["Qaitbay Citadel & Corniche bike ride","3h","Max 10",25,4.7,96],["Bibliotheca & Kom el-Shoqafa catacombs","4h","Small group",35,4.8,124],["Anfushi fish market & cooking class","3h","Max 6",30,4.9,71]]}
+    cairo:{name:"Cairo",hw:"cairo",line:"Pyramids at sunrise, the Grand Egyptian Museum and late-night koshary downtown. Stay near Tahrir for easy metro access.",
+      tours:[["Giza Pyramids sunrise with an Egyptologist","5h","Small group",45,"1600520611035-84157ad4084d","Giza Pyramids tour"],["Old Cairo & Khan el-Khalili food walk","4h","Max 8",30,"1710211288826-b7df3ab71588","Cairo food tour"],["Grand Egyptian Museum guided visit","3h","Small group",40,"1771142899929-b54d19ab97da","Grand Egyptian Museum"]]},
+    luxor:{name:"Luxor",hw:"luxor",line:"The world's largest open-air museum. Temples on the East Bank, royal tombs on the West.",
+      tours:[["Hot-air balloon over the West Bank","3h","Basket of 16",90,"1648139210454-23c95b91409f","Luxor hot air balloon"],["Valley of the Kings & Hatshepsut","6h","Small group",55,"1632944398987-494eebe663be","Valley of the Kings"],["Karnak sound & light show","2h","Open seating",25,"1777924985147-3cb171a44c9d","Karnak sound and light"]]},
+    aswan:{name:"Aswan",hw:"aswan",line:"The calmest stretch of the Nile, Nubian villages and the gateway to Abu Simbel.",
+      tours:[["Felucca sail to Elephantine Island","2h","Private boat",15,"1648139210543-da574312cda9","Aswan felucca"],["Nubian village visit","4h","Small group",25,"1657569802830-53d59cbc708f","Nubian village Aswan"],["Abu Simbel day trip","12h","Small group",95,"1761560879601-f44463a523dc","Abu Simbel"]]},
+    hurghada:{name:"Hurghada",hw:"hurghada",line:"Red Sea reefs straight off the coast and desert just behind town. The best-value place in Egypt to learn to dive.",
+      tours:[["Giftun Island snorkel day","7h","Boat group",35,"1578327254130-f16b8e7202aa","Giftun Island"],["Desert quad ride & Bedouin dinner","5h","Small group",30,"1624062999803-976e1adc8ea2","Hurghada quad"],["Discover Scuba first dive","4h","Max 4",60,"1759414478236-292c50016d7f","Hurghada diving"]]},
+    sharm:{name:"Sharm El Sheikh",hw:"sharm-el-sheikh",line:"Ras Mohammed's coral walls and the night climb up Mount Sinai.",
+      tours:[["Ras Mohammed national park snorkel","8h","Boat group",45,"1777551881568-50b1beab7d91","Ras Mohammed"],["Mount Sinai sunrise hike","12h","Small group",50,"1572376069663-5f52bdd158f2","Mount Sinai sunrise"],["Old Market evening walk","3h","Max 10",20,"1660244484823-1a3ad3f99181","Sharm El Sheikh old market"]]},
+    alexandria:{name:"Alexandria",hw:"alexandria",line:"Mediterranean breeze, Greco-Roman ruins and fresh fish on the Corniche. Two and a half hours from Cairo by train.",
+      tours:[["Qaitbay Citadel & Corniche bike ride","3h","Max 10",25,"1594808815295-52034d585f56","Alexandria city tour"],["Bibliotheca & Kom el-Shoqafa catacombs","4h","Small group",35,"1669329330758-cb84ab85113d","Bibliotheca Alexandrina"],["Anfushi fish market & cooking class","3h","Max 6",30,"1778412500752-7bbe764ca31e","Alexandria cooking class"]]}
   };
+  /* Real properties: guest rating, review count and lowest price as listed on Hostelworld, November 2026. */
+  const HW = "https://www.hostelworld.com/";
   const STAYS = [
-    {city:"cairo",name:"Nile Rooftop Hostel",area:"Downtown · 4 min to Sadat metro",score:9.3,reviews:1284,tags:["Women-only dorm","24h reception","Rooftop"],rates:[["Hostelworld",9],["Booking.com",11],["Expedia",12]]},
-    {city:"luxor",name:"West Bank Courtyard",area:"Al-Bairat · by the ferry",score:9.4,reviews:642,tags:["Women-only dorm","Bike rental"],rates:[["Booking.com",9],["Hostelworld",10],["Expedia",11]]},
-    {city:"aswan",name:"Nubian Blue Guesthouse",area:"Gharb Soheil · Nile front",score:9.5,reviews:517,tags:["Private rooms","Felucca trips"],rates:[["Hostelworld",13],["Booking.com",14],["Expedia",15]]},
-    {city:"cairo",name:"Zamalek Garden House",area:"Zamalek · quiet island streets",score:9.0,reviews:803,tags:["Private rooms","Free breakfast"],rates:[["Expedia",17],["Booking.com",18],["Hostelworld",19]]},
-    {city:"hurghada",name:"Dahar Dive House",area:"El Dahar · near the marina",score:9.1,reviews:388,tags:["Dive desk","Pool"],rates:[["Booking.com",14],["Hostelworld",14],["Expedia",15]]},
-    {city:"alexandria",name:"Corniche Commons",area:"Raml Station · sea view",score:8.8,reviews:455,tags:["Women-only dorm","Social events"],rates:[["Hostelworld",10],["Booking.com",12],["Expedia",13]]},
-    {city:"sharm",name:"Naama Bay Bunks",area:"Naama Bay · walk to the beach",score:8.6,reviews:291,tags:["24h reception","Kitchen"],rates:[["Expedia",16],["Booking.com",17],["Hostelworld",18]]}
+    {city:"cairo",name:"Meramees Hostel",rating:9.9,label:"Superb",reviews:2035,from:8.09,url:HW+"hostels/p/2332/meramees-hostel/"},
+    {city:"luxor",name:"Happy Land Hotel",rating:9.4,label:"Superb",reviews:335,from:2.25,url:HW+"hostels/p/279921/happy-land-hotel/"},
+    {city:"aswan",name:"Go Inn Backpackers",rating:9.1,label:"Superb",reviews:363,from:7.19,url:HW+"hostels/p/313651/go-inn-backbpackers/"},
+    {city:"hurghada",name:"Bedcoin Hostel",rating:9.8,label:"Superb",reviews:212,from:8.09,url:HW+"hostels/p/318963/bedcoin-hostel/"},
+    {city:"cairo",name:"Freedom Hostel",rating:9.9,label:"Superb",reviews:477,from:1.80,url:HW+"hostels/p/57328/freedom-hostel/",img:"1697571349572-e73357ca5e19"},
+    {city:"sharm",name:"Oonas Dive Club",rating:9.0,label:"Fabulous",reviews:74,from:13.00,url:HW+"hotels/p/17159/oonas-dive-club/"},
+    {city:"alexandria",name:"Ithaka Raml Hostel",rating:9.3,label:"Superb",reviews:44,from:19.64,url:HW+"hostels/p/330795/ithaka-raml-hostel/"},
+    {city:"cairo",name:"Villa Layla",rating:9.8,label:"Superb",reviews:234,from:7.68,url:HW+"hostels/p/330811/villa-layla/",img:"1686109896248-1f9908ed7f6d"},
+    {city:"luxor",name:"New Everest Hostel",rating:9.3,label:"Superb",reviews:301,from:0.98,url:HW+"hostels/p/292837/new-everest-hostel/",img:"1667765912995-07c5b404888a"},
+    {city:"luxor",name:"Al Salam Camp",rating:9.4,label:"Superb",reviews:318,from:1.96,url:HW+"hostels/p/25706/al-salam-camp/",img:"1599679101629-e1ecdee2b3aa"},
+    {city:"hurghada",name:"Sea Waves Hotel",rating:9.9,label:"Superb",reviews:139,from:1.67,url:HW+"hostels/p/274231/sea-waves-hotel/",img:"1581903740151-9758183fdff2"},
+    {city:"aswan",name:"David Hostel",rating:7.6,label:"Very Good",reviews:151,from:2.70,url:HW+"hostels/p/303681/david-hostel/",img:"1648139210634-850da9f936fa"}
   ];
   const WORLD = ["Istanbul","Dubai","Paris","London","Barcelona","Bangkok","Tokyo","Marrakech"];
 
@@ -535,17 +581,34 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     if (src) return `<img src="${src}" alt="${alt || PHOTO_BRIEF[key] || ""}" loading="lazy">`;
     return sceneSVG(key) + `<span class="hint">Photo: ${PHOTO_BRIEF[key] || key}</span>`;
   }
+  const imgTag = (id, alt, w) => `<img src="${U(id, w || 900)}" alt="${alt}" loading="lazy">`;
   document.querySelectorAll("[data-photo]").forEach(el => el.insertAdjacentHTML("afterbegin", photoInner(el.dataset.photo)));
 
   const $ = s => document.querySelector(s);
   let cur = "USD", stayCity = "all", tourCity = "cairo", favs = new Set();
   try { cur = localStorage.getItem("tz-cur") || "USD"; } catch(e) {}
   const money = usd => cur === "USD" ? `$${usd}` : `EGP ${Math.round(usd * RATE).toLocaleString("en-US")}`;
-  const word = s => s >= 9.3 ? "Exceptional" : s >= 9 ? "Superb" : s >= 8.5 ? "Excellent" : "Very good";
+  const eur = v => `€${v.toFixed(2)}`;
+  const dates = () => ({ din: $("#q-in").value, dout: $("#q-out").value, n: parseInt($("#q-guests").value, 10) || 1 });
+  const bookingSearch = (place, hostelsOnly) => {
+    const d = dates(), q = new URLSearchParams({ ss: place, group_adults: d.n, no_rooms: 1 });
+    if (d.din) q.set("checkin", d.din); if (d.dout) q.set("checkout", d.dout); if (hostelsOnly) q.set("nflt", "ht_id=203");
+    return "https://www.booking.com/searchresults.html?" + q.toString();
+  };
+  const expediaSearch = place => {
+    const d = dates(), q = new URLSearchParams({ destination: place, adults: d.n });
+    if (d.din) q.set("startDate", d.din); if (d.dout) q.set("endDate", d.dout);
+    return "https://www.expedia.com/Hotel-Search?" + q.toString();
+  };
+  const hwCity = k => `${HW}hostels/africa/egypt/${CITIES[k].hw}/`;
+  const gygSearch = q => "https://www.getyourguide.com/s/?q=" + encodeURIComponent(q);
 
   function renderMosaic(){
     const order = ["cairo","luxor","aswan","hurghada","sharm","alexandria"];
-    $("#mosaic").innerHTML = order.map((k,i) => `<button type="button" class="photo tile ${i===0?"big":(i===1||i>=4?"wide":"")}" data-city="${k}" aria-label="See stays in ${CITIES[k].name}">${photoInner(k, CITIES[k].name)}<div class="cap"><h3>${CITIES[k].name}</h3><p class="num">Hostels from ${money(CITIES[k].from)} a night</p></div></button>`).join("");
+    $("#mosaic").innerHTML = order.map((k,i) => {
+      const top = STAYS.filter(s => s.city === k).sort((a,b) => b.rating - a.rating || b.reviews - a.reviews)[0];
+      return `<button type="button" class="photo tile ${i===0?"big":(i===1||i>=4?"wide":"")}" data-city="${k}" aria-label="See top-rated stays in ${CITIES[k].name}">${photoInner(k, CITIES[k].name)}<div class="cap"><h3>${CITIES[k].name}</h3><p>${top ? `Top pick: ${top.name} · ${top.rating.toFixed(1)}` : "See stays"}</p></div></button>`;
+    }).join("");
   }
   function chips(sel, withAll, role){
     const items = (withAll ? [["all","All cities"]] : []).concat(Object.entries(CITIES).map(([k,v]) => [k, v.name]));
@@ -554,18 +617,22 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   }
   function renderStays(){
     $("#stay-filters").innerHTML = chips(stayCity, true, "btn");
-    const list = STAYS.filter(h => stayCity === "all" || h.city === stayCity).slice(0, 6);
+    const list = stayCity === "all" ? STAYS.slice(0, 6) : STAYS.filter(h => h.city === stayCity).sort((a,b) => b.rating - a.rating || b.reviews - a.reviews).slice(0, 6);
+    $("#see-all").href = out("hostelworld", stayCity === "all" ? HW + "hostels/africa/egypt/" : hwCity(stayCity));
     $("#stay-grid").innerHTML = list.map(h => {
-      const min = Math.min(...h.rates.map(r => r[1]));
+      const place = `${h.name}, ${CITIES[h.city].name}`;
       return `<article class="card">
-        <div class="photo">${photoInner(h.city, h.name)}<span class="pill-on-photo">${CITIES[h.city].name}</span>
+        <div class="photo">${h.img ? imgTag(h.img, CITIES[h.city].name) : photoInner(h.city, CITIES[h.city].name)}<span class="pill-on-photo">${CITIES[h.city].name}</span>
           <button class="fav" type="button" aria-label="Save ${h.name}" aria-pressed="${favs.has(h.name)}" data-fav="${h.name}"><svg class="icon"><use href="#i-heart"/></svg></button></div>
         <div class="body">
-          <div><h3>${h.name}</h3><p class="sub">${h.area}</p></div>
-          <div class="rating"><b>${h.score.toFixed(1)}</b><strong>${word(h.score)}</strong><span class="num">· ${h.reviews.toLocaleString("en-US")} reviews</span></div>
-          <div class="tags">${h.tags.map(t => `<span class="tag ${/Women|24h/.test(t) ? "ok" : ""}">${t}</span>`).join("")}</div>
-          <div class="rates">${h.rates.map(r => `<div class="${r[1]===min?"best":""}"><span>${r[0]}</span><span class="num">${money(r[1])}</span></div>`).join("")}</div>
-          <div class="foot-row"><div class="price num">${money(min)} <small>/ night</small></div><a class="btn btn-primary" href="#stays" data-deal="${h.name}">View deal</a></div>
+          <div><h3>${h.name}</h3><p class="sub">${CITIES[h.city].name}, Egypt</p></div>
+          <div class="rating"><b>${h.rating.toFixed(1)}</b><strong>${h.label}</strong><span class="num">· ${h.reviews.toLocaleString("en-US")} reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span>${ext("hostelworld", h.url, "num link", "from " + eur(h.from))}</div>
+            <div><span>Booking.com</span>${ext("booking", bookingSearch(place), "link", "Check price")}</div>
+            <div><span>Expedia</span>${ext("expedia", expediaSearch(place), "link", "Check price")}</div>
+          </div>
+          <div class="foot-row"><div class="price num">${eur(h.from)} <small>/ night from</small></div>${ext("hostelworld", h.url, "btn btn-primary", "View deal")}</div>
         </div></article>`;
     }).join("");
   }
@@ -574,16 +641,16 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const c = CITIES[tourCity];
     $("#city-line").textContent = c.line;
     $("#tour-grid").innerHTML = c.tours.map(e => `<article class="card">
-      <div class="photo">${photoInner(tourCity, e[0])}<span class="pill-on-photo">Free cancellation</span></div>
+      <div class="photo">${imgTag(e[4], e[0])}<span class="pill-on-photo">Traveliaz tour</span></div>
       <div class="body">
         <h3>${e[0]}</h3>
-        <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><strong class="num">${e[4].toFixed(1)}</strong><span class="num">· ${e[5]} reviews</span></div>
-        <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"/></svg>${e[1]}</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"/></svg>${e[2]}</span></div>
-        <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>${money(e[3])}</div><a class="btn btn-primary" href="#tours" data-deal="${e[0]}">Book now</a></div>
+        <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"/></svg>${e[1]}</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"/></svg>${e[2]}</span><span>Licensed guide</span></div>
+        <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>${money(e[3])}</div><button class="btn btn-primary" type="button" data-request="${e[0]}">Request booking</button></div>
+        <p class="sub">More options: ${ext("getyourguide", gygSearch(e[5]), "link", "compare on GetYourGuide")}</p>
       </div></article>`).join("");
   }
   function renderWorld(){
-    $("#world").insertAdjacentHTML("beforeend", WORLD.map(w => `<button type="button" data-world="${w}">${w}</button>`).join(""));
+    $("#world").insertAdjacentHTML("beforeend", WORLD.map(w => `<a href="${out("booking", "https://www.booking.com/searchresults.html?ss=" + encodeURIComponent(w))}" target="_blank" rel="sponsored noopener" class="world-link">${w}</a>`).join(""));
   }
   function setCur(c){
     cur = c; try { localStorage.setItem("tz-cur", c); } catch(e) {}
@@ -597,29 +664,35 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", x.dataset.mode === mode));
     const m = MODES[mode]; $("#l-city").textContent = m[0]; $("#l-in").textContent = m[1]; $("#l-out").textContent = m[2]; $("#q-go").textContent = m[3];
   }
+  function openOut(url){ const w = window.open(url, "_blank", "noopener"); if (!w) location.href = url; }
   document.addEventListener("click", ev => {
     const t = ev.target;
     const sf = t.closest("#stay-filters .chip"); if (sf) { stayCity = sf.dataset.c; renderStays(); return; }
     const ct = t.closest("#city-tabs .chip"); if (ct) { tourCity = ct.dataset.c; renderTours(); return; }
     const tile = t.closest(".tile"); if (tile) { stayCity = tile.dataset.city; renderStays(); $("#stays").scrollIntoView({behavior:"smooth"}); return; }
     const tab = t.closest(".tab"); if (tab) { setMode(tab.dataset.mode); return; }
-    const plan = t.closest(".plan"); if (plan) { ev.preventDefault(); setMode(plan.dataset.mode); $("#top").scrollIntoView({behavior:"smooth"}); $("#q-city").focus({preventScroll:true}); return; }
     const fv = t.closest(".fav"); if (fv) { const n = fv.dataset.fav; favs.has(n) ? favs.delete(n) : favs.add(n); fv.setAttribute("aria-pressed", favs.has(n)); toast(favs.has(n) ? `Saved ${n}` : `Removed ${n}`); return; }
-    const dl = t.closest("[data-deal]"); if (dl) { ev.preventDefault(); toast("Partner booking links go live once the affiliate feeds are connected."); return; }
-    const w = t.closest("[data-world]"); if (w) { toast(`Stays in ${w.dataset.world} appear once the partner feeds are connected.`); return; }
+    const rq = t.closest("[data-request]"); if (rq) {
+      $("#b-msg").value = `Tour: ${rq.dataset.request}\nDate: \nNumber of travelers: `;
+      ["s-hotel","s-flight","s-car"].forEach(id => $("#" + id).checked = false); $("#s-tour").checked = true;
+      $("#business").scrollIntoView({behavior:"smooth"}); setTimeout(() => $("#b-name").focus({preventScroll:true}), 500); return; }
     if (t.closest("#cur-usd")) setCur("USD"); if (t.closest("#cur-egp")) setCur("EGP");
     const bg = t.closest("#burger"); if (bg) { const m = $("#menu"); const o = m.classList.toggle("open"); bg.setAttribute("aria-expanded", o); return; }
     if (t.closest("#menu a")) { $("#menu").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); }
   });
+  $("#plan-flights").href = out("expedia", "https://www.expedia.com/Vacation-Packages");
+  $("#plan-cars").href = out("discovercars", "https://www.discovercars.com/");
   $("#search").addEventListener("submit", ev => {
     ev.preventDefault();
-    const err = $("#search-err"), din = $("#q-in").value, dout = $("#q-out").value;
-    if (din && dout && dout <= din) { err.textContent = "The second date must be after the first. Pick a later date."; err.hidden = false; return; }
+    const err = $("#search-err"), d = dates();
+    if (d.din && d.dout && d.dout <= d.din) { err.textContent = "The second date must be after the first. Pick a later date."; err.hidden = false; return; }
     err.hidden = true;
     const city = $("#q-city").value, mode = document.querySelector('.tab[aria-selected="true"]').dataset.mode;
-    if (mode === "tours") { if (city !== "all") tourCity = city; renderTours(); $("#tours").scrollIntoView({behavior:"smooth"}); }
-    else if (mode === "stays") { stayCity = city; renderStays(); $("#stays").scrollIntoView({behavior:"smooth"}); }
-    else { toast(mode === "cars" ? "Car rental search goes live once the rental partners are connected." : "Package search goes live once the flight partners are connected."); }
+    const place = city === "all" ? "Egypt" : `${CITIES[city].name}, Egypt`;
+    if (mode === "stays") { if (city !== "all") { stayCity = city; renderStays(); } openOut(out("booking", bookingSearch(place, true))); }
+    else if (mode === "tours") { if (city !== "all") { tourCity = city; renderTours(); } $("#tours").scrollIntoView({behavior:"smooth"}); }
+    else if (mode === "cars") openOut(out("discovercars", "https://www.discovercars.com/"));
+    else openOut(out("expedia", "https://www.expedia.com/Vacation-Packages"));
   });
   $("#b2b-form").addEventListener("submit", ev => {
     ev.preventDefault();
