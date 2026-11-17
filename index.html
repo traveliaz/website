@@ -25,13 +25,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       document.head.appendChild(script);
   })();
 </script>
-<title>Traveliaz · The World Is Yours | Hostels, Flights &amp; Tours</title>
-<meta name="description" content="The world is yours. Compare the best-rated hostels and hotels in Egypt across Booking.com, Expedia and Hostelworld, add flights and car rentals, and book tours with licensed guides in Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh and Alexandria.">
+<title>Egypt Hostels, Cheap Flights &amp; Tours for Solo Travelers | Traveliaz</title>
+<meta name="description" content="Top-rated hostels in Cairo, Luxor, Aswan and Hurghada from €1 a night, cheap flights to Egypt, and tours with licensed local guides from $15.">
 <meta name="keywords" content="solo travel Egypt, best hostels in Cairo, hostels Egypt, cheap hotels Egypt, things to do in Cairo, Luxor balloon, Aswan felucca, Hurghada snorkeling, Sharm El Sheikh tours, Egypt car rental, Egypt group travel">
-<meta property="og:title" content="Traveliaz · The world is yours">
-<meta property="og:description" content="Hostels, hotels, flights, cars and local tours, compared in one place. Start with Egypt.">
+<meta property="og:title" content="Egypt hostels, cheap flights &amp; tours | Traveliaz">
+<meta property="og:description" content="Top-rated hostels from €1 a night, cheap flights to Egypt and tours with licensed local guides. The world is yours.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.traveliaz.com/">
+<meta property="og:site_name" content="Traveliaz">
 <meta property="og:image" content="https://images.unsplash.com/photo-1643667996984-fcc69743449d?auto=format&fit=crop&w=1200&h=630&q=75">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -44,9 +45,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TravelAgency","name":"Traveliaz","url":"https://www.traveliaz.com/","image":"https://images.unsplash.com/photo-1643667996984-fcc69743449d?auto=format&fit=crop&w=1200&h=630&q=75","logo":"https://www.traveliaz.com/assets/brand/apple-touch-icon-180.png","slogan":"The world is yours","description":"Hostel and hotel comparison for solo travelers, plus flights, car rentals and guided tours across Egypt.","areaServed":["Cairo","Alexandria","Hurghada","Sharm El Sheikh","Luxor","Aswan"],"address":{"@type":"PostalAddress","addressLocality":"Cairo","addressCountry":"EG"},"knowsAbout":["Hostels","Hotels","Solo travel","Egypt tours","Flights","Car rental","Group travel"]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"VideoObject","name":"Traveliaz: The world is yours","description":"Traveliaz brand film: hostels, flights, car rentals and guided tours, starting with Egypt.","thumbnailUrl":"https://www.traveliaz.com/assets/video/traveliaz-film-poster.jpg","contentUrl":"https://www.traveliaz.com/assets/video/traveliaz-the-world-is-yours.mp4","uploadDate":"2026-11-06","duration":"PT25S"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -167,7 +165,7 @@ section.soft{background:var(--soft)}
 
 /* destinations mosaic */
 .mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:14px}
-.tile{border-radius:var(--r);cursor:pointer;border:0;padding:0;text-align:left;color:#fff;display:block}
+.tile{border-radius:var(--r);cursor:pointer;border:0;padding:0;text-align:left;color:#fff;display:block;text-decoration:none}
 .tile.big{grid-column:span 2;grid-row:span 2}
 .tile.wide{grid-column:span 2}
 .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,22,0) 45%,rgba(20,10,22,.6) 100%);transition:opacity .2s}
@@ -377,8 +375,8 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="photo hero-photo" data-photo="hero">
       <div class="hero-copy">
-        <span class="kicker"><svg class="icon" style="width:16px;height:16px"><use href="#i-pin"/></svg>Start with Egypt</span>
-        <h1 id="hero-title">The world is yours.</h1>
+        <span class="kicker"><svg class="icon" style="width:16px;height:16px"><use href="#i-pin"/></svg>The world is yours.</span>
+        <h1 id="hero-title">Egypt hostels, flights &amp; tours for solo travelers</h1>
         <p>Compare hostels and hotels from Booking.com, Expedia and Hostelworld in one search, then add flights, a car and tours with local guides.</p>
       </div>
     </div>
@@ -415,9 +413,9 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   <section class="block" id="destinations" aria-labelledby="dest-title">
     <div class="wrap">
       <div class="sec-head">
-        <div><h2 id="dest-title">Trending destinations in Egypt</h2><p>Where solo travelers are heading this season.</p></div>
+        <div><h2 id="dest-title">Trending destinations in Egypt</h2><p>Where solo travelers are heading this season. Tap a city for its full guide.</p></div>
       </div>
-      <div class="mosaic" id="mosaic"></div>
+      <div class="mosaic" id="mosaic"><a class="photo tile big" data-city="cairo" href="/cairo/" aria-label="Cairo travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1626692880062-35c360fb6afc?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Cairo" loading="lazy"><div class="cap"><h3>Cairo</h3><p>Top pick: Meramees Hostel · 9.9</p></div></a><a class="photo tile wide" data-city="luxor" href="/luxor/" aria-label="Luxor travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1685616075808-04bb9db4ea1c?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Luxor" loading="lazy"><div class="cap"><h3>Luxor</h3><p>Top pick: Happy Land Hotel · 9.4</p></div></a><a class="photo tile " data-city="aswan" href="/aswan/" aria-label="Aswan travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1684100096410-fd39cdff91a3?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Aswan" loading="lazy"><div class="cap"><h3>Aswan</h3><p>Top pick: Go Inn Backpackers · 9.1</p></div></a><a class="photo tile " data-city="hurghada" href="/hurghada/" aria-label="Hurghada travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1692285736030-03fb3ba9cd18?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Hurghada" loading="lazy"><div class="cap"><h3>Hurghada</h3><p>Top pick: Sea Waves Hotel · 9.9</p></div></a><a class="photo tile wide" data-city="sharm" href="/sharm-el-sheikh/" aria-label="Sharm El Sheikh travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1669544553496-252ed4e9573d?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Sharm El Sheikh" loading="lazy"><div class="cap"><h3>Sharm El Sheikh</h3><p>Top pick: Oonas Dive Club · 9.0</p></div></a><a class="photo tile wide" data-city="alexandria" href="/alexandria/" aria-label="Alexandria travel guide: hostels and things to do"><img src="https://images.unsplash.com/photo-1633624646814-3a61ed3e2847?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Alexandria" loading="lazy"><div class="cap"><h3>Alexandria</h3><p>Top pick: Ithaka Raml Hostel · 9.3</p></div></a></div>
       <div class="world" id="world"><span>Also popular worldwide:</span></div>
     </div>
   </section>
@@ -428,9 +426,81 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <div><h2 id="stays-title">Top-rated hostels for solo travelers</h2><p>The highest-rated hostels in each city, with their guest ratings and review counts from Hostelworld. You book on the partner site at its own price.</p></div>
         <a class="link" id="see-all" href="https://www.hostelworld.com/hostels/africa/egypt/" target="_blank" rel="sponsored noopener">See all stays <svg class="icon" style="width:18px"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="chips" id="stay-filters" aria-label="Filter stays by city"></div>
+      <div class="chips" id="stay-filters" aria-label="Filter stays by city"><button type="button" class="chip" aria-pressed="true" data-c="all">All cities</button><button type="button" class="chip" aria-pressed="false" data-c="cairo">Cairo</button><button type="button" class="chip" aria-pressed="false" data-c="luxor">Luxor</button><button type="button" class="chip" aria-pressed="false" data-c="aswan">Aswan</button><button type="button" class="chip" aria-pressed="false" data-c="hurghada">Hurghada</button><button type="button" class="chip" aria-pressed="false" data-c="sharm">Sharm El Sheikh</button><button type="button" class="chip" aria-pressed="false" data-c="alexandria">Alexandria</button></div>
       <p class="swipe-hint">Swipe to see more →</p>
-      <div class="grid3 scroller" id="stay-grid"></div>
+      <div class="grid3 scroller" id="stay-grid"><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1626692880062-35c360fb6afc?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Cairo" loading="lazy"><span class="pill-on-photo">Cairo</span>
+          <button class="fav" type="button" aria-label="Save Meramees Hostel" aria-pressed="false" data-fav="Meramees Hostel"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Meramees Hostel</h3><p class="sub">Cairo, Egypt</p></div>
+          <div class="rating"><b>9.9</b><strong>Superb</strong><span class="num">· 2,035 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hostels/p/2332/meramees-hostel/" target="_blank" rel="sponsored noopener">€8.09</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Meramees+Hostel%2C+Cairo&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Meramees+Hostel%2C+Cairo&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€8.09 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hostels/p/2332/meramees-hostel/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1685616075808-04bb9db4ea1c?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Luxor" loading="lazy"><span class="pill-on-photo">Luxor</span>
+          <button class="fav" type="button" aria-label="Save Happy Land Hotel" aria-pressed="false" data-fav="Happy Land Hotel"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Happy Land Hotel</h3><p class="sub">Luxor, Egypt</p></div>
+          <div class="rating"><b>9.4</b><strong>Superb</strong><span class="num">· 335 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hostels/p/279921/happy-land-hotel/" target="_blank" rel="sponsored noopener">€2.25</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Happy+Land+Hotel%2C+Luxor&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Happy+Land+Hotel%2C+Luxor&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€2.25 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hostels/p/279921/happy-land-hotel/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1684100096410-fd39cdff91a3?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Aswan" loading="lazy"><span class="pill-on-photo">Aswan</span>
+          <button class="fav" type="button" aria-label="Save Go Inn Backpackers" aria-pressed="false" data-fav="Go Inn Backpackers"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Go Inn Backpackers</h3><p class="sub">Aswan, Egypt</p></div>
+          <div class="rating"><b>9.1</b><strong>Superb</strong><span class="num">· 363 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hostels/p/313651/go-inn-backbpackers/" target="_blank" rel="sponsored noopener">€7.19</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Go+Inn+Backpackers%2C+Aswan&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Go+Inn+Backpackers%2C+Aswan&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€7.19 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hostels/p/313651/go-inn-backbpackers/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1692285736030-03fb3ba9cd18?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Hurghada" loading="lazy"><span class="pill-on-photo">Hurghada</span>
+          <button class="fav" type="button" aria-label="Save Bedcoin Hostel" aria-pressed="false" data-fav="Bedcoin Hostel"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Bedcoin Hostel</h3><p class="sub">Hurghada, Egypt</p></div>
+          <div class="rating"><b>9.8</b><strong>Superb</strong><span class="num">· 212 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hostels/p/318963/bedcoin-hostel/" target="_blank" rel="sponsored noopener">€8.09</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Bedcoin+Hostel%2C+Hurghada&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Bedcoin+Hostel%2C+Hurghada&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€8.09 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hostels/p/318963/bedcoin-hostel/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1697571349572-e73357ca5e19?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Cairo" loading="lazy"><span class="pill-on-photo">Cairo</span>
+          <button class="fav" type="button" aria-label="Save Freedom Hostel" aria-pressed="false" data-fav="Freedom Hostel"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Freedom Hostel</h3><p class="sub">Cairo, Egypt</p></div>
+          <div class="rating"><b>9.9</b><strong>Superb</strong><span class="num">· 477 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hostels/p/57328/freedom-hostel/" target="_blank" rel="sponsored noopener">€1.80</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Freedom+Hostel%2C+Cairo&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Freedom+Hostel%2C+Cairo&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€1.80 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hostels/p/57328/freedom-hostel/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article><article class="card">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1669544553496-252ed4e9573d?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Sharm El Sheikh" loading="lazy"><span class="pill-on-photo">Sharm El Sheikh</span>
+          <button class="fav" type="button" aria-label="Save Oonas Dive Club" aria-pressed="false" data-fav="Oonas Dive Club"><svg class="icon"><use href="#i-heart"></use></svg></button></div>
+        <div class="body">
+          <div><h3>Oonas Dive Club</h3><p class="sub">Sharm El Sheikh, Egypt</p></div>
+          <div class="rating"><b>9.0</b><strong>Fabulous</strong><span class="num">· 74 reviews on Hostelworld</span></div>
+          <div class="rates">
+            <div class="best"><span>Hostelworld</span><a class="num link" href="https://www.hostelworld.com/hotels/p/17159/oonas-dive-club/" target="_blank" rel="sponsored noopener">€13.00</a></div>
+            <div><span>Booking.com</span><a class="link" href="https://www.booking.com/searchresults.html?ss=Oonas+Dive+Club%2C+Sharm+El+Sheikh&amp;group_adults=1&amp;no_rooms=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+            <div><span>Expedia</span><a class="link" href="https://www.expedia.com/Hotel-Search?destination=Oonas+Dive+Club%2C+Sharm+El+Sheikh&amp;adults=1" target="_blank" rel="sponsored noopener">Compare</a></div>
+          </div>
+          <div class="foot-row"><div class="price num"><small>from </small>€13.00 <small>/ night</small></div><a class="btn btn-primary" href="https://www.hostelworld.com/hotels/p/17159/oonas-dive-club/" target="_blank" rel="sponsored noopener">View deal</a></div>
+        </div></article></div>
       <p class="note">Ratings, review counts and starting prices from Hostelworld, checked November 2026. Prices change daily; the partner site shows the live rate.</p>
     </div>
   </section>
@@ -467,10 +537,31 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       <div class="sec-head">
         <div><h2 id="tours-title">Things to do in Egypt</h2><p>Small-group and private tours run by Traveliaz with licensed local guides. Send a booking request and we confirm by email.</p></div>
       </div>
-      <div class="chips" role="tablist" id="city-tabs" aria-label="Choose a city"></div>
-      <p class="city-line" id="city-line"></p>
+      <div class="chips" role="tablist" id="city-tabs" aria-label="Choose a city"><button type="button" class="chip" role="tab" aria-selected="true" data-c="cairo">Cairo</button><button type="button" class="chip" role="tab" aria-selected="false" data-c="luxor">Luxor</button><button type="button" class="chip" role="tab" aria-selected="false" data-c="aswan">Aswan</button><button type="button" class="chip" role="tab" aria-selected="false" data-c="hurghada">Hurghada</button><button type="button" class="chip" role="tab" aria-selected="false" data-c="sharm">Sharm El Sheikh</button><button type="button" class="chip" role="tab" aria-selected="false" data-c="alexandria">Alexandria</button></div>
+      <p class="city-line" id="city-line">Pyramids at sunrise, the Grand Egyptian Museum and late-night koshary downtown. Stay near Tahrir for easy metro access.</p>
       <p class="swipe-hint">Swipe to see more →</p>
-      <div class="grid3 scroller" id="tour-grid"></div>
+      <div class="grid3 scroller" id="tour-grid"><article class="card">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Giza Pyramids sunrise with an Egyptologist" loading="lazy"><span class="pill-on-photo">Traveliaz tour</span></div>
+      <div class="body">
+        <h3>Giza Pyramids sunrise with an Egyptologist</h3>
+        <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"></use></svg>5h</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"></use></svg>Small group</span><span>Licensed guide</span></div>
+        <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>$45</div><button class="btn btn-primary" type="button" data-request="Giza Pyramids sunrise with an Egyptologist">Request booking</button></div>
+        <p class="sub">Or browse <a class="link" href="https://tp.media/r?marker=801704&amp;p=4110&amp;u=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fcity%2F284-cairo-things-to-do&amp;trs=596753&amp;campaign_id=137" target="_blank" rel="sponsored noopener">more Cairo tours on Klook</a></p>
+      </div></article><article class="card">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1710211288826-b7df3ab71588?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Old Cairo &amp; Khan el-Khalili food walk" loading="lazy"><span class="pill-on-photo">Traveliaz tour</span></div>
+      <div class="body">
+        <h3>Old Cairo &amp; Khan el-Khalili food walk</h3>
+        <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"></use></svg>4h</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"></use></svg>Max 8</span><span>Licensed guide</span></div>
+        <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>$30</div><button class="btn btn-primary" type="button" data-request="Old Cairo &amp; Khan el-Khalili food walk">Request booking</button></div>
+        <p class="sub">Or browse <a class="link" href="https://tp.media/r?marker=801704&amp;p=4110&amp;u=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fcity%2F284-cairo-things-to-do&amp;trs=596753&amp;campaign_id=137" target="_blank" rel="sponsored noopener">more Cairo tours on Klook</a></p>
+      </div></article><article class="card">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1771142899929-b54d19ab97da?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Grand Egyptian Museum guided visit" loading="lazy"><span class="pill-on-photo">Traveliaz tour</span></div>
+      <div class="body">
+        <h3>Grand Egyptian Museum guided visit</h3>
+        <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"></use></svg>3h</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"></use></svg>Small group</span><span>Licensed guide</span></div>
+        <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>$40</div><button class="btn btn-primary" type="button" data-request="Grand Egyptian Museum guided visit">Request booking</button></div>
+        <p class="sub">Or browse <a class="link" href="https://tp.media/r?marker=801704&amp;p=4110&amp;u=https%3A%2F%2Fwww.klook.com%2Fen-US%2Fcity%2F284-cairo-things-to-do&amp;trs=596753&amp;campaign_id=137" target="_blank" rel="sponsored noopener">more Cairo tours on Klook</a></p>
+      </div></article></div>
     </div>
   </section>
 
@@ -561,7 +652,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <p class="slogan">The world is yours.</p>
         <p style="margin-top:6px;max-width:36ch">Stays, flights, cars and tours, compared in one place. Based in Cairo.</p>
       </div>
-      <div><h4>Stays in Egypt</h4><ul><li><a href="#stays" data-stay-city="cairo">Hostels in Cairo</a></li><li><a href="#stays" data-stay-city="luxor">Hostels in Luxor</a></li><li><a href="#stays" data-stay-city="aswan">Hostels in Aswan</a></li><li><a href="#stays" data-stay-city="hurghada">Hostels in Hurghada</a></li></ul></div>
+      <div><h4>Egypt city guides</h4><ul><li><a href="/cairo/">Cairo</a></li><li><a href="/luxor/">Luxor</a></li><li><a href="/aswan/">Aswan</a></li><li><a href="/hurghada/">Hurghada</a></li><li><a href="/sharm-el-sheikh/">Sharm El Sheikh</a></li><li><a href="/alexandria/">Alexandria</a></li></ul></div>
       <div><h4>Things to do</h4><ul><li><a href="#tours" data-tour-city="cairo">Giza Pyramids tours</a></li><li><a href="#tours" data-tour-city="luxor">Luxor balloon rides</a></li><li><a href="#tours" data-tour-city="hurghada">Red Sea snorkeling</a></li><li><a href="#tours" data-tour-city="aswan">Abu Simbel trips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="/flights/">Cheap flights to Egypt</a></li><li><a href="#business">For business</a></li><li><a href="#business">Exhibitions</a></li><li><a href="#faq">Help</a></li></ul></div>
     </div>
@@ -734,11 +825,12 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   const LOCALRENT = ["all", "cairo", "hurghada", "sharm"];   /* Localrent covers these in Egypt; DiscoverCars for the rest */
   const carLink = k => LOCALRENT.includes(k || "all") ? out("localrent", "https://www.localrent.com/en/egypt/") : out("discovercars", carsUrl(k));
 
+  const SLUG = { cairo:"cairo", luxor:"luxor", aswan:"aswan", hurghada:"hurghada", sharm:"sharm-el-sheikh", alexandria:"alexandria" };
   function renderMosaic(){
     const order = ["cairo","luxor","aswan","hurghada","sharm","alexandria"];
     $("#mosaic").innerHTML = order.map((k,i) => {
       const top = STAYS.filter(s => s.city === k).sort((a,b) => b.rating - a.rating || b.reviews - a.reviews)[0];
-      return `<button type="button" class="photo tile ${i===0?"big":(i===1||i>=4?"wide":"")}" data-city="${k}" aria-label="See top-rated stays in ${CITIES[k].name}">${photoInner(k, CITIES[k].name)}<div class="cap"><h3>${CITIES[k].name}</h3><p>${top ? `Top pick: ${top.name} · ${top.rating.toFixed(1)}` : "See stays"}</p></div></button>`;
+      return `<a class="photo tile ${i===0?"big":(i===1||i>=4?"wide":"")}" data-city="${k}" href="/${SLUG[k]}/" aria-label="${CITIES[k].name} travel guide: hostels and things to do">${photoInner(k, CITIES[k].name)}<div class="cap"><h3>${CITIES[k].name}</h3><p>${top ? `Top pick: ${top.name} · ${top.rating.toFixed(1)}` : "See stays"}</p></div></a>`;
     }).join("");
   }
   function chips(sel, withAll, role){
@@ -802,7 +894,6 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const t = ev.target;
     const sf = t.closest("#stay-filters .chip"); if (sf) { stayCity = sf.dataset.c; renderStays(); return; }
     const ct = t.closest("#city-tabs .chip"); if (ct) { tourCity = ct.dataset.c; renderTours(); return; }
-    const tile = t.closest(".tile"); if (tile) { stayCity = tile.dataset.city; renderStays(); $("#stays").scrollIntoView({behavior:"smooth"}); return; }
     const tab = t.closest(".tab"); if (tab) { setMode(tab.dataset.mode); return; }
     const fs = t.closest("[data-stay-city]"); if (fs) { stayCity = fs.dataset.stayCity; renderStays(); }
     const ft = t.closest("[data-tour-city]"); if (ft) { tourCity = ft.dataset.tourCity; renderTours(); }
@@ -879,7 +970,14 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       .catch(() => { ok.textContent = `We couldn't send that just now. Check your connection and try again, or email us at ${FORM_EMAIL}.`; })
       .finally(() => { btn.disabled = false; btn.textContent = "Send request"; });
   });
+  const qp = new URLSearchParams(location.search), qc = qp.get("city"), qt = qp.get("tour");
+  if (qc && CITIES[qc]) { stayCity = qc; tourCity = qc; }
   renderWorld(); setCur(cur);
+  if (qt) {
+    $("#b-msg").value = `Tour: ${qt}\nDate: \nNumber of travelers: `;
+    ["s-hotel","s-flight","s-car"].forEach(id => $("#" + id).checked = false); $("#s-tour").checked = true;
+    setTimeout(() => { $("#business").scrollIntoView(); $("#b-name").focus({preventScroll:true}); }, 300);
+  }
 })();
 </script>
 </body>
