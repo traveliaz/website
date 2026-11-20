@@ -250,6 +250,28 @@ section.soft{background:var(--soft)}
 .film-frame{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:16/9;max-width:100%}
 .film-frame video{display:block;width:100%;height:100%;object-fit:cover}
 
+/* tour booking dialog */
+.tdlg{border:0;padding:0;border-radius:var(--r);width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(20,8,20,.35)}
+.tdlg::backdrop{background:rgba(20,10,22,.55)}
+.tdlg form,.tdlg .done{padding:22px 22px 24px;display:grid;gap:14px}
+.tdlg .top{display:flex;gap:14px;align-items:flex-start}
+.tdlg .top img{width:84px;height:84px;object-fit:cover;border-radius:12px;flex:none}
+.tdlg .top h3{font-size:1.2rem;line-height:1.2}
+.tdlg .top p{color:var(--muted);font-size:.9rem;margin-top:4px}
+.tdlg .top .price{font-family:var(--head);font-weight:800;color:var(--pink);font-size:1.15rem;margin-top:6px}
+.tdlg .x{margin-left:auto;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px}
+.tdlg label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+.tdlg input,.tdlg select,.tdlg textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--bg);color:var(--ink);min-width:0;width:100%}
+.tdlg input:focus,.tdlg select:focus,.tdlg textarea:focus{outline:2px solid var(--pink);outline-offset:1px}
+.tdlg .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:480px){.tdlg .two{grid-template-columns:1fr}}
+.tdlg .reassure{display:grid;gap:4px;font-size:.88rem;color:var(--muted);background:var(--soft);border-radius:var(--r-sm);padding:10px 12px}
+.tdlg .reassure b{color:var(--ok)}
+.tdlg .status{font-size:.92rem}
+.tdlg .done h3{font-size:1.3rem}
+.tdlg .done ol{display:grid;gap:8px;padding-left:20px;color:var(--muted)}
+.card .free{font-size:.82rem;color:var(--ok);font-weight:600;margin-top:6px}
+
 /* plan extras */
 .extras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
 @media (max-width:640px){.extras{grid-template-columns:1fr}}
@@ -656,10 +678,35 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       <div><h4>Things to do</h4><ul><li><a href="#tours" data-tour-city="cairo">Giza Pyramids tours</a></li><li><a href="#tours" data-tour-city="luxor">Luxor balloon rides</a></li><li><a href="#tours" data-tour-city="hurghada">Red Sea snorkeling</a></li><li><a href="#tours" data-tour-city="aswan">Abu Simbel trips</a></li></ul></div>
       <div><h4>Company</h4><ul><li><a href="/flights/">Cheap flights to Egypt</a></li><li><a href="#business">For business</a></li><li><a href="#business">Exhibitions</a></li><li><a href="#faq">Help</a></li></ul></div>
     </div>
-    <p class="legal">© 2017–2026 Traveliaz. All rights reserved. Booking.com, Expedia, Hostelworld, Klook, Localrent, DiscoverCars, Kiwitaxi and Airalo are trademarks of their owners. Tour prices in EGP use a reference rate of 54 EGP per USD (Central Bank of Egypt, November 2026). Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
+    <p class="legal">© 2017–2026 Traveliaz. All rights reserved. Booking.com, Expedia, Hostelworld, Klook, Localrent, Economybookings, Kiwitaxi and Airalo are trademarks of their owners. Tour prices in EGP use a reference rate of 54 EGP per USD (Central Bank of Egypt, November 2026). Some links are affiliate links: Traveliaz may earn a commission at no extra cost to you. Photos from Unsplash.</p>
     <p class="credit">Website designed by <a href="https://egowebservices.com/" target="_blank" rel="noopener">EGO Web Services LLC</a></p>
   </div>
 </footer>
+<dialog class="tdlg" id="tour-dlg" aria-labelledby="t-title">
+  <form id="tour-form" novalidate>
+    <div class="top"><img id="t-img" alt="" width="84" height="84"><div><h3 id="t-title">Tour</h3><p id="t-meta"></p><div class="price num" id="t-price"></div></div><button class="x" type="button" id="t-close" aria-label="Close">×</button></div>
+    <div class="two">
+      <label for="t-name">Your name<input id="t-name" required autocomplete="name"></label>
+      <label for="t-email">Email<input id="t-email" type="email" required autocomplete="email"></label>
+    </div>
+    <div class="two">
+      <label for="t-date">Preferred date<input id="t-date" type="date"></label>
+      <label for="t-pax">Travelers<select id="t-pax"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select></label>
+    </div>
+    <label for="t-phone">WhatsApp number <span style="font-weight:500;color:var(--muted)">(optional, for a faster reply)</span><input id="t-phone" type="tel" autocomplete="tel" placeholder="+44 7700 900123"></label>
+    <label for="t-note">Anything we should know? <span style="font-weight:500;color:var(--muted)">(optional)</span><textarea id="t-note" rows="2" placeholder="Hotel area, pickup time, private tour…"></textarea></label>
+    <input type="text" id="t-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+    <div class="reassure"><span><b>✓</b> No payment to send a request</span><span><b>✓</b> We confirm the guide, time and final price by email within one business day</span><span><b>✓</b> Licensed local guides</span></div>
+    <button class="btn btn-primary" type="submit" id="t-send">Send booking request</button>
+    <p class="status" id="t-status" role="status" hidden></p>
+  </form>
+  <div class="done" id="t-done" hidden>
+    <h3>Request sent ✓</h3>
+    <p id="t-done-line"></p>
+    <ol><li>We check guide availability for your date.</li><li>We email you the confirmed time, meeting point and final price.</li><li>You confirm, and you're booked.</li></ol>
+    <button class="btn btn-primary" type="button" id="t-ok">Done</button>
+  </div>
+</dialog>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script>
@@ -822,8 +869,9 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   const klookPage = key => `https://www.klook.com/en-US/${KLOOK[key] || KLOOK.cairo}`;
   const DC = { cairo:"cairo", luxor:"luxor", aswan:"aswan", hurghada:"hurghada-red-sea", sharm:"sharm-el-sheikh", alexandria:"alexandria" };
   const carsUrl = k => "https://www.discovercars.com/egypt" + (DC[k] ? "/" + DC[k] : "");
-  const LOCALRENT = ["all", "cairo", "hurghada", "sharm"];   /* Localrent covers these in Egypt; DiscoverCars for the rest */
-  const carLink = k => LOCALRENT.includes(k || "all") ? out("localrent", "https://www.localrent.com/en/egypt/") : out("discovercars", carsUrl(k));
+  const LOCALRENT = ["all", "cairo", "hurghada", "sharm"];   /* Localrent covers these in Egypt; Economybookings (Travelpayouts, active) for the rest */
+  const ECONOMY = "https://economybookings.tpo.lu/NwBgfqIo";  /* Travelpayouts tracked link, sub ID site-cars */
+  const carLink = k => LOCALRENT.includes(k || "all") ? out("localrent", "https://www.localrent.com/en/egypt/") : ECONOMY;
 
   const SLUG = { cairo:"cairo", luxor:"luxor", aswan:"aswan", hurghada:"hurghada", sharm:"sharm-el-sheikh", alexandria:"alexandria" };
   function renderMosaic(){
@@ -870,6 +918,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
         <h3>${e[0]}</h3>
         <div class="meta"><span><svg class="icon" style="width:16px;height:16px"><use href="#i-clock"/></svg>${e[1]}</span><span><svg class="icon" style="width:16px;height:16px"><use href="#i-group"/></svg>${e[2]}</span><span>Licensed guide</span></div>
         <div class="foot-row" style="margin-top:auto"><div class="price num"><small>from </small>${money(e[3])}</div><button class="btn btn-primary" type="button" data-request="${e[0]}">Request booking</button></div>
+        <p class="free">✓ Free to request · reply within 1 business day</p>
         <p class="sub">Or browse ${ext("klook", klookPage(tourCity), "link", `more ${c.name} tours on Klook`)}</p>
       </div></article>`).join("");
   }
@@ -889,7 +938,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const fl = mode === "flights"; $("#f-from").hidden = !fl; $("#q-city").placeholder = mode === "tours" ? "Any city in Egypt" : "Anywhere in Egypt or the world"; $("#fields").classList.toggle("is-flights", fl);
     const m = MODES[mode]; $("#l-city").textContent = m[0]; $("#l-in").textContent = m[1]; $("#l-out").textContent = m[2]; $("#q-go").textContent = m[3];
   }
-  function openOut(url){ const w = window.open(url, "_blank", "noopener"); if (!w) location.href = url; }
+  function openOut(url){ track("affiliate_click", { partner: partnerOf(url), link_text: "search" }); const w = window.open(url, "_blank", "noopener"); if (!w) location.href = url; }
   document.addEventListener("click", ev => {
     const t = ev.target;
     const sf = t.closest("#stay-filters .chip"); if (sf) { stayCity = sf.dataset.c; renderStays(); return; }
@@ -898,10 +947,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     const fs = t.closest("[data-stay-city]"); if (fs) { stayCity = fs.dataset.stayCity; renderStays(); }
     const ft = t.closest("[data-tour-city]"); if (ft) { tourCity = ft.dataset.tourCity; renderTours(); }
     const fv = t.closest(".fav"); if (fv) { const n = fv.dataset.fav; favs.has(n) ? favs.delete(n) : favs.add(n); saveFavs(); fv.setAttribute("aria-pressed", favs.has(n)); toast(favs.has(n) ? `Saved ${n}` : `Removed ${n}`); return; }
-    const rq = t.closest("[data-request]"); if (rq) {
-      $("#b-msg").value = `Tour: ${rq.dataset.request}\nDate: \nNumber of travelers: `;
-      ["s-hotel","s-flight","s-car"].forEach(id => $("#" + id).checked = false); $("#s-tour").checked = true;
-      $("#business").scrollIntoView({behavior:"smooth"}); setTimeout(() => $("#b-name").focus({preventScroll:true}), 500); return; }
+    const rq = t.closest("[data-request]"); if (rq) { openTour(rq.dataset.request); return; }
     if (t.closest("#cur-usd")) setCur("USD"); if (t.closest("#cur-egp")) setCur("EGP");
     const bg = t.closest("#burger"); if (bg) { const m = $("#menu"); const o = m.classList.toggle("open"); bg.setAttribute("aria-expanded", o); return; }
     if (t.closest("#menu a")) { $("#menu").classList.remove("open"); $("#burger").setAttribute("aria-expanded", "false"); }
@@ -947,8 +993,54 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
     else if (mode === "tours") {
       if (!city) { err.textContent = "Our guided tours run in Egypt. Pick Cairo, Luxor, Aswan, Hurghada, Sharm El Sheikh or Alexandria."; err.hidden = false; return; }
       if (city !== "all") { tourCity = city; renderTours(); } $("#tours").scrollIntoView({behavior:"smooth"}); }
-    else if (mode === "cars") openOut(city ? carLink(city) : out("discovercars", "https://www.discovercars.com/"));
+    else if (mode === "cars") openOut(city ? carLink(city) : ECONOMY);
     else location.href = flightsUrl(dst, d);
+  });
+
+  /* ==== conversion tracking (Google Tag Manager dataLayer) ==== */
+  window.dataLayer = window.dataLayer || [];
+  const track = (event, data) => { try { window.dataLayer.push(Object.assign({ event }, data || {})); } catch (e) {} };
+  const partnerOf = href => { try { const h = new URL(href, location.href).hostname.replace(/^www\./, ""); if (h === "tp.media") { const u = new URL(href).searchParams.get("u"); return u ? new URL(u).hostname.replace(/^www\./, "") : h; } return h; } catch (e) { return "unknown"; } };
+  document.addEventListener("click", ev => { const a = ev.target.closest('a[rel~="sponsored"]'); if (a) track("affiliate_click", { partner: partnerOf(a.href), link_text: (a.textContent || "").trim().slice(0, 60) }); }, true);
+
+  /* ==== tour booking dialog ==== */
+  const findTour = name => { for (const k of Object.keys(CITIES)) { const e = CITIES[k].tours.find(x => x[0] === name); if (e) return { k, e }; } return null; };
+  let curTour = "";
+  function openTour(name){
+    curTour = name; const f = findTour(name), d = $("#tour-dlg");
+    $("#t-title").textContent = name;
+    if (f) { $("#t-meta").textContent = `${CITIES[f.k].name} · ${f.e[1]} · ${f.e[2]} · Licensed guide`; $("#t-price").innerHTML = `<small>from </small>${money(f.e[3])} <small>per person</small>`; $("#t-img").src = U(f.e[4], 200); $("#t-img").alt = f.e[5] || name; $("#t-img").hidden = false; }
+    else { $("#t-meta").textContent = "Licensed local guide"; $("#t-price").textContent = ""; $("#t-img").hidden = true; }
+    const tm = new Date(Date.now() + 864e5 * 2); $("#t-date").min = new Date().toISOString().slice(0, 10); if (!$("#t-date").value) $("#t-date").value = tm.toISOString().slice(0, 10);
+    $("#tour-form").hidden = false; $("#t-done").hidden = true; $("#t-status").hidden = true;
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+    track("begin_tour_request", { tour: name });
+    setTimeout(() => $("#t-name").focus(), 50);
+  }
+  const closeTour = () => { const d = $("#tour-dlg"); if (d.close) d.close(); else d.removeAttribute("open"); };
+  $("#t-close").addEventListener("click", closeTour); $("#t-ok").addEventListener("click", closeTour);
+  $("#tour-dlg").addEventListener("click", ev => { if (ev.target === ev.currentTarget) closeTour(); });
+  $("#tour-form").addEventListener("submit", ev => {
+    ev.preventDefault();
+    const name = $("#t-name").value.trim(), em = $("#t-email").value.trim(), st = $("#t-status"), btn = $("#t-send");
+    st.hidden = false;
+    if ($("#t-hp").value) return;
+    if (!name || !/^\S+@\S+\.\S+$/.test(em)) { st.textContent = "Add your name and a valid email so we can confirm your tour."; (!name ? $("#t-name") : $("#t-email")).focus(); return; }
+    const f = findTour(curTour), date = $("#t-date").value || "flexible", pax = $("#t-pax").value;
+    const payload = { tour: curTour, city: f ? CITIES[f.k].name : "-", price_from_usd: f ? f.e[3] : "-", date, travelers: pax, name, email: em, whatsapp: $("#t-phone").value.trim() || "-", notes: $("#t-note").value.trim() || "-", page: location.pathname,
+      _subject: `Tour request: ${curTour} · ${date} · ${pax} pax`, _replyto: em, _template: "table", _captcha: "false" };
+    btn.disabled = true; btn.textContent = "Sending…"; st.textContent = "Sending your request…";
+    fetch("https://formsubmit.co/ajax/" + FORM_EMAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) })
+      .then(r => r.json().catch(() => ({})).then(j => ({ ok: r.ok && String(j.success) !== "false" })))
+      .then(({ ok }) => {
+        if (!ok) throw new Error("not sent");
+        track("generate_lead", { lead_type: "tour", tour: curTour, value: f ? f.e[3] * (parseInt(pax, 10) || 1) : undefined, currency: "USD" });
+        $("#t-done-line").textContent = `Thanks ${name}. We'll email ${em} within one business day to confirm ${curTour}.`;
+        $("#tour-form").hidden = true; $("#t-done").hidden = false; st.hidden = true;
+        ["t-name","t-email","t-phone","t-note"].forEach(id => $("#" + id).value = "");
+      })
+      .catch(() => { st.textContent = `We couldn't send that just now. Check your connection and try again, or email us at ${FORM_EMAIL}.`; })
+      .finally(() => { btn.disabled = false; btn.textContent = "Send booking request"; });
   });
   $("#b2b-form").addEventListener("submit", ev => {
     ev.preventDefault();
@@ -964,6 +1056,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
       .then(r => r.json().catch(() => ({})).then(j => ({ ok: r.ok && String(j.success) !== "false", j })))
       .then(({ ok: sent }) => {
         if (!sent) throw new Error("not sent");
+        track("generate_lead", { lead_type: "business", group_size: payload.group_size, services: payload.services });
         ok.textContent = `Thanks ${name}. Your request is in. We reply to ${em} within one business day.`;
         ["b-name","b-co","b-email","b-msg"].forEach(id => $("#" + id).value = "");
       })
@@ -973,11 +1066,7 @@ footer .logo{color:#FFFFFF;--logo-pink:#FF3D7F}
   const qp = new URLSearchParams(location.search), qc = qp.get("city"), qt = qp.get("tour");
   if (qc && CITIES[qc]) { stayCity = qc; tourCity = qc; }
   renderWorld(); setCur(cur);
-  if (qt) {
-    $("#b-msg").value = `Tour: ${qt}\nDate: \nNumber of travelers: `;
-    ["s-hotel","s-flight","s-car"].forEach(id => $("#" + id).checked = false); $("#s-tour").checked = true;
-    setTimeout(() => { $("#business").scrollIntoView(); $("#b-name").focus({preventScroll:true}); }, 300);
-  }
+  if (qt) { const f = findTour(qt); if (f) { tourCity = f.k; renderTours(); setTimeout(() => { $("#tours").scrollIntoView(); openTour(qt); }, 300); } }
 })();
 </script>
 </body>
